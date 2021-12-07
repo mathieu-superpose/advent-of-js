@@ -1,0 +1,51 @@
+@use '../../styles/fonts' as *;
+
+.Home {
+	min-height: 100vh;
+	width: 100vw;
+	background-image: url('./src/images/plaid.png');
+	font-family: 'Strange Tales', courier;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__head {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-image: url('./src/images/header.svg');
+		background-repeat:no-repeat;
+		background-size: 100% 100%;
+		background-position: top;
+		&__title {
+			width: 40vw;
+			font-size: 5.5rem;
+			position: relative;
+			margin-right: 5%;
+			&__advent {
+				transform: rotate(-7deg);
+				color: white;
+			}
+			&__of {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+	&__main {
+		width: 80vw;
+		margin: 5rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	&__foot {
+		width: 100vw;
+		height: 30vh;
+		background-image: url('./src/images/illustration.svg');
+	}
+}
