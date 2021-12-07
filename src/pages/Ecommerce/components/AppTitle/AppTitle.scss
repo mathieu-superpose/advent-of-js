@@ -1,0 +1,20 @@
+@use '../../styles/mixins' as m;
+@use '../../styles/globals' as *;
+
+.AppTitle {
+	font-family: 'Poppins';
+	margin: -70px 70px 70px;
+	@include m.unselectable;
+	&__title {
+		font-size: 70px;
+		line-height: 70px;
+		&__top {
+			font-size: 50px;
+			line-height: 50px;
+			margin: 0 20px;
+		}
+	}
+	&__ref {
+		margin: 10px 25px;
+	}
+}

@@ -1,0 +1,65 @@
+@use "../../styles/colors" as *;
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  src: url('../../assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+
+.MenuItem {
+	height: 120px;
+	width: 90%;
+	padding-top: 10px;
+	border-radius: 30px 0 0 30px;
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Poppins';
+	position: relative;
+	&__view {
+		&__image {
+			width: 130px;
+			height: 130px;
+			margin: -30px 0 0 -10px;
+		}
+	}
+	&__details {
+		width: 180px;
+		height: 90px;
+		padding-top: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		&__title {
+			height: 50px;
+			max-width: 17ch;
+			font-weight: 400;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			line-height: 14px;
+		}
+		&__price {
+			font-size: 30px;
+		}
+	}
+	&__addCart {
+		width: 100px;
+		position: absolute;
+		bottom: -10px;
+		left: 135px;
+		background: $primary;
+		border: none;
+		outline: none;
+		padding: 5px 10px;
+		border-radius: 15px;
+		font-family: 'Poppins';
+		font-size: 12px;
+		color: $ghostWhite;
+	}
+}
