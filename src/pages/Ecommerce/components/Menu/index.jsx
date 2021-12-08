@@ -1,15 +1,15 @@
-import React, { useState } from 'react'; 
-
 import MenuItem from '../MenuItem';
 
 import wave from '../../assets/images/wave.svg';
 
 import './Menu.scss';
 
-import { data } from '../../db';
+const Menu = ({ items, setItems }) => {
 
-const Menu = () => {
-  const [items, setItems] = useState(data);
+  const addToCart = (itemName) => {
+    const newItems = items.map((i) => i.title === itemName ? { ...i, inCart: 1} : { ...i })
+    setItems(newItems)
+  };
 
   return (
     <div className="Menu">
@@ -19,7 +19,7 @@ const Menu = () => {
       </header>
       <section className="Menu__items">
         {items && items.map((item, index) => (
-          <MenuItem key={item.title} item={item} index={index} />
+          <MenuItem key={item.title} item={item} index={index} addToCart={addToCart} />
         ))}
       </section>
     </div>

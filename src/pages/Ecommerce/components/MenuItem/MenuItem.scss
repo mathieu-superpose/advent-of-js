@@ -45,15 +45,15 @@
 			line-height: 14px;
 		}
 		&__price {
-			font-size: 30px;
+			font-size: 2rem;
+			margin-bottom: 10px;
 		}
 	}
-	&__addCart {
-		width: 100px;
+	&__addCart,
+	&__inCart {
 		position: absolute;
 		bottom: -10px;
 		left: 135px;
-		background: $primary;
 		border: none;
 		outline: none;
 		padding: 5px 10px;
@@ -61,5 +61,26 @@
 		font-family: 'Poppins';
 		font-size: 12px;
 		color: $ghostWhite;
+		display: flex;
+		justify-content: center;
+	}
+	&__inCart {
+		width: 70px;
+		background: black;
+		&__mark {
+			width: 15px;
+			margin-right: 5px;
+		}
+	}
+	&__addCart {
+		width: 90px;
+		background: $primary;
+		opacity: .8;
+		&:hover {
+			opacity: 1;
+		}
+		&:active {
+			background: black;
+		}
 	}
 }

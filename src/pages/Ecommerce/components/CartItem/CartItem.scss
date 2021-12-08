@@ -1,0 +1,83 @@
+@use '../../styles/colors' as c;
+
+.CartItem {
+	margin: 20px;
+	font-family: 'Poppins';
+	&__preview {
+		display: flex;
+		&__dish {
+			height: 60px;
+			width: 60px;
+			position: relative;
+			&__image {
+				position: absolute;
+				width: 100%;
+			}
+			&__count {
+				height: 20px;
+				width: 20px;
+				background: black;
+				color: white;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+			}
+		}
+		&__details {
+			margin: 10px;
+			&__title {
+				font-weight: 400;
+			}
+			&__price {
+				font-weight: 700;
+			}
+		}
+	}
+	&__selection {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: 10px;
+		&__button {
+			background: c.$primary;
+			outline: none;
+			border: none;
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: .7;
+			&:hover {
+				opacity: 1;
+			}
+			&:active {
+				background: black;
+			}
+			&__plus {
+				transform: rotateZ(180deg);
+			}
+		}
+		&__value {
+			min-width: 140px;
+			display: flex;
+			justify-content: end;
+			&__currency,
+			&__price {
+				font-weight: 700;
+				font-size: 2rem;
+			}
+			&__currency {
+				margin-right: 10px;
+			}
+			&__price {
+
+			}
+		}
+	}
+}

@@ -1,21 +1,9 @@
-@use "styles/colors" as *;
-
-@font-face {
-  font-family: 'Poppins';
-  font-weight: 400;
-  src: url('./assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-weight: 700;
-  src: url('./assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
-}
+@use "styles/colors" as c;
 
 .Ecommerce {
 	min-height: 100vh;
 	width: 100vw;
-	background: $background;
+	background: c.$background;
 	display: flex;
 	justify-content: center;
 	align-items: center;
