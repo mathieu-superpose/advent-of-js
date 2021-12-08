@@ -1,0 +1,39 @@
+@use "../../styles/colors" as c;
+
+
+.Cart {
+	height: 80vh;
+	width: 350px;
+	background: c.$ghostWhite;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	filter: drop-shadow(0 0 25px c.$border);
+	overflow-x: hidden;
+	-ms-overflow-style: none;
+		scrollbar-width: none;
+	&::-webkit-scrollbar {
+	  display: none;
+	}
+	&__header {
+		position: relative;
+		&__title {
+			margin: 30px 30px 15px;
+			font-size: 30px;
+			font-family: 'Poppins';
+		}
+		&__wave {
+			background: none;
+			fill: white;
+			position: absolute;
+			z-index: 2;
+			bottom: -27px;
+		}
+	}
+	&__items {
+		margin-top: 20px;
+	}
+	&__bill {
+		border-radius: 0 0 30px 30px;
+	}
+}
