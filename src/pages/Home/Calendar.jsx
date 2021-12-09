@@ -28,7 +28,7 @@ const Calendar = () => {
   return (
     <div className="Calendar">
       <Link to="/pomodoro"><img className="Calendar__small" src={day01} alt="advent calendar day 1" /></Link>
-      <img className="Calendar__small" src={day02} alt="advent calendar day 2" />
+      <Link to="/ecommerce"><img className="Calendar__small" src={day02} alt="advent calendar day 2" /></Link>
       <img className="Calendar__small" src={day03} alt="advent calendar day 3" />
       <img className="Calendar__small" src={day04} alt="advent calendar day 4" />
       <img className="Calendar__small" src={day05} alt="advent calendar day 5" />
