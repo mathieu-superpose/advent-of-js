@@ -44,6 +44,11 @@
   color: black;
 }
 
+.pressed {
+  background:  #ffd200;
+  color: black;
+}
+
 .jiggle {
   animation: jiggle 1s;
   animation-iteration-count: infinite;
