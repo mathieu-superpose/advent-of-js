@@ -74,3 +74,19 @@ A simple game aiming to press from your keyboard the keys highlighted on screen
 ### Useful ressources
 
 [Global Keyboard Event in React]](https://stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks)
+
+
+## 06: Slidebar
+
+### Description
+
+A simple Range Slider that updates a price
+
+### User stories
+
+- I can move the knob on the range and the dollar amount above updates itself.
+
+
+
+
+
