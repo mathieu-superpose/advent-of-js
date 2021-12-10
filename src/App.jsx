@@ -5,6 +5,7 @@ import Pomodoro from './pages/Pomodoro/Pomodoro'
 import Ecommerce from './pages/Ecommerce/Ecommerce'
 import Piano from './pages/Piano/Piano'
 import Keyboard from './pages/Keyboard/Keyboard'
+import Slidebar from './pages/Slidebar/Slidebar'
 
 import './App.scss'
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/ecommerce" element={<Ecommerce />} />
         <Route path="/piano" element={<Piano />} />
         <Route path="/keyboard" element={<Keyboard />} />
+        <Route path="/slidebar" element={<Slidebar />} />
       </Routes>
     </div>
   )
