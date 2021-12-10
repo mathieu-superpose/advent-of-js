@@ -23,14 +23,14 @@ import key21 from '../../assets/audios/key-21.mp3';
 import key22 from '../../assets/audios/key-22.mp3';
 import key23 from '../../assets/audios/key-23.mp3';
 
-import './Keyboard.scss'
+import './PianoKeyboard.scss'
 
-const Keyboard = () => {
+const PianoKeyboard = () => {
 
   const playSound = (audio) => new Audio(audio).play();
 
   return (
-    <div className="Keyboard">
+    <div className="PianoKeyboard">
       <svg width="1387" height="467" viewBox="0 0 1387 467" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/*<!-- white keys -->*/}
         <a href="#" onClick={() => playSound(key01)}>
@@ -119,4 +119,4 @@ const Keyboard = () => {
   )
 }
 
-export default Keyboard
+export default PianoKeyboard

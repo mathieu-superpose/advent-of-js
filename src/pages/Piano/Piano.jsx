@@ -1,4 +1,4 @@
-import Keyboard from './components/Keyboard'
+import PianoKeyboard from './components/PianoKeyboard'
 
 import './Piano.scss'
 
@@ -10,7 +10,7 @@ const Piano = () => {
         <h1 className="Piano__header__title">PIANO</h1>
         <p className="Piano__header__sub">ADVANT OF JS 2021 #03</p>
       </header>
-      <Keyboard />
+      <PianoKeyboard />
     </div>
   )
 }
