@@ -6,6 +6,8 @@ import Ecommerce from './pages/Ecommerce/Ecommerce'
 import Piano from './pages/Piano/Piano'
 import Keyboard from './pages/Keyboard/Keyboard'
 
+import './App.scss'
+
 function App() {
   return (
     <div className="App">
