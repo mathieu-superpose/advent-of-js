@@ -51,6 +51,7 @@
 	}
 	&__addCart,
 	&__inCart {
+		width: 90px;
 		position: absolute;
 		bottom: -10px;
 		left: 135px;
@@ -65,7 +66,6 @@
 		justify-content: center;
 	}
 	&__inCart {
-		width: 70px;
 		background: black;
 		&__mark {
 			width: 15px;
@@ -73,7 +73,6 @@
 		}
 	}
 	&__addCart {
-		width: 90px;
 		background: $primary;
 		opacity: .8;
 		&:hover {
