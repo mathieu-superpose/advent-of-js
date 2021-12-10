@@ -32,7 +32,7 @@ const Calendar = () => {
       <Link to="/piano"><img className="Calendar__small" src={day03} alt="advent calendar day 3" /></Link>
       <Link to="/keyboard"><img className="Calendar__small" src={day04} alt="advent calendar day 4" /></Link>
       <img className="Calendar__small" src={day05} alt="advent calendar day 5" />
-      <img className="Calendar__small" src={day06} alt="advent calendar day 6" />
+      <Link to="/slidebar"><img className="Calendar__small" src={day06} alt="advent calendar day 6" /></Link>
       <img className="Calendar__small" src={day07} alt="advent calendar day 7" />
       <img className="Calendar__small" src={day08} alt="advent calendar day 8" />
       <img className="Calendar__small" src={day09} alt="advent calendar day 9" />
