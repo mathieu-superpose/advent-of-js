@@ -21,6 +21,10 @@ A simple pomodoro App
 - I can set the timer by clicking on the gear icon.
 - I can see the end of the timer: the ring change from green to red and an alert message is passed.
 
+### Extra
+
+- I can figure the time elapsed through the light surrounding the counter
+
 ### Useful ressources
 
 [CSS countdown animation](https://spin.atomicobject.com/2018/11/08/countdown-timer-react-typescript/)
@@ -41,9 +45,31 @@ A list of items and a cart associated
 - I can remove a product from the cart.
 - I can see the taxed price (based on the state of Tennessee sales tax: `0.0975`)
 
+## 03: Piano
 
+### Description
+
+A piano playing various sounds by clicking on the keys.
+
+### User stories
+
+- I can see the keyboard centered on the page
+- I can see a color change when I hover over a specific key (white becomes yellow and black pink)
+- I can hear an audio clip when I click on a specific key
+- I can hear 2 sounds simultaneaously if I rapidly click on two separate keys 
 
 ## 04: Keyboard
+
+### Description
+
+A simple game aiming to press from your keyboard the keys highlighted on screen
+
+### User stories
+
+- I can see the computer keyboard centered on the page
+- I can see a random letter jiggling
+- I can press a key and it appear on screen
+- I can press the same key as the one jiggling and a new random key will jiggle
 
 ### Useful ressources
 
