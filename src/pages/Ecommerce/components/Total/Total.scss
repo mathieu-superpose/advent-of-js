@@ -1,0 +1,30 @@
+.Total {
+	font-family: 'Poppins';
+	padding: 20px;
+	&__empty {
+		display: flex;
+		justify-content: end;
+	}
+	&__subtotal,
+	&__tax,
+	&__total {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		gap: 10px;
+		&__title {
+			font-weight: 700;
+			font-size: .8rem;
+		}
+		&__currency,
+		&__price {
+			font-size: 2rem;
+			font-weight: 700;
+		}
+		&__price {
+			min-width: 70px;
+			display: flex;
+			justify-content: end;
+		}
+	}
+}

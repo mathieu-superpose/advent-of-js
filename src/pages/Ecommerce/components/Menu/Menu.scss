@@ -1,0 +1,53 @@
+@use "../../styles/colors" as c;
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  src: url('../../assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+
+.Menu {
+	height: 80vh;
+	width: 350px;
+	background: c.$ghostWhite;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	filter: drop-shadow(0 0 25px c.$border);
+	overflow: hidden;
+	&__header {
+		position: relative;
+		&__title {
+			margin: 30px 30px 15px;
+			font-size: 30px;
+			font-family: 'Poppins';
+		}
+		&__wave {
+			background: none;
+			fill: white;
+			position: absolute;
+			z-index: 2;
+			bottom: -27px;
+		}
+	}
+	&__items {
+		padding: 30px 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 30px;
+		overflow-x: hidden;
+		-ms-overflow-style: none;
+  	scrollbar-width: none;
+		&::-webkit-scrollbar {
+		  display: none;
+		}
+	}
+}

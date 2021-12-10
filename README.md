@@ -21,7 +21,30 @@ A simple pomodoro App
 - I can set the timer by clicking on the gear icon.
 - I can see the end of the timer: the ring change from green to red and an alert message is passed.
 
-### Usefull ressources
+### Useful ressources
 
 [CSS countdown animation](https://spin.atomicobject.com/2018/11/08/countdown-timer-react-typescript/)
 
+## 02: eCommerce Component
+
+### Description
+
+A list of items and a cart associated
+
+### User stories
+
+- I can see a list of plates and add them to my cart.
+- I can see a message "Your cart is empty." when it is.
+- I can see the total and subtotal automatically update when I add a plate in my cart.
+- I can increase and decrease the quantity of the products in my cart.
+- I can never obtain a negative quantity of items.
+- I can remove a product from the cart.
+- I can see the taxed price (based on the state of Tennessee sales tax: `0.0975`)
+
+
+
+## 04: Keyboard
+
+### Useful ressources
+
+[Global Keyboard Event in React]](https://stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks)
