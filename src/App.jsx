@@ -6,6 +6,7 @@ import Ecommerce from './pages/Ecommerce/Ecommerce'
 import Piano from './pages/Piano/Piano'
 import Keyboard from './pages/Keyboard/Keyboard'
 import Slidebar from './pages/Slidebar/Slidebar'
+import BillAmount from './pages/BillAmount/BillAmount'
 
 import './App.scss'
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/piano" element={<Piano />} />
         <Route path="/keyboard" element={<Keyboard />} />
         <Route path="/slidebar" element={<Slidebar />} />
+        <Route path="/billamount" element={<BillAmount />} />
       </Routes>
     </div>
   )
