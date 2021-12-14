@@ -7,6 +7,7 @@ import Piano from './pages/Piano/Piano'
 import Keyboard from './pages/Keyboard/Keyboard'
 import Slidebar from './pages/Slidebar/Slidebar'
 import BillAmount from './pages/BillAmount/BillAmount'
+import CustomModal from './pages/CustomModal/CustomModal'
 
 import './App.scss'
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/keyboard" element={<Keyboard />} />
         <Route path="/slidebar" element={<Slidebar />} />
         <Route path="/billamount" element={<BillAmount />} />
+        <Route path="/custom-modal" element={<CustomModal />} />
       </Routes>
     </div>
   )
