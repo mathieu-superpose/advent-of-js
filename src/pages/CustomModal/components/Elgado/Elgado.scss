@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap');
+
+.Elgado {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  	font-family: 'Roboto', sans-serif;
+	&:before {
+		content: '';
+		width: 100vw;
+		height: 100vh;
+		background: white;
+		opacity: .4;
+		position: fixed;
+	}
+	&__card {
+		width: 70vw;
+		height: 90vh;
+		background: white;
+		border-radius: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		&__close {
+			height: 30px;
+			width: 30px;
+			background: none;
+			border: none;
+			outline: none;
+			position: absolute;
+			top: 30px;
+			right: 50px;
+			transition: all .4s;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		&__text {
+			width: 45%;
+			height: 80%;
+			opacity: 1;
+			&__title {
+				font-family: 'Oswald', sans-serif;
+				text-transform: uppercase;
+				color: pink;
+				font-size: 8rem;
+				font-weight: 700;
+				letter-spacing: -.5px;
+				padding: 0;
+				margin: -10px 0 30px;
+				line-height: .9;
+			}
+			&__main,
+			&__intro {
+				font-family: 'Roboto', sans-serif;
+				font-size: 1rem;
+				line-height: 1.5;
+				margin: 10px 0;
+				width: 350px;
+			}
+			&__btn {
+				background-color: gold;
+				color: black;
+				border-radius: 100px;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 900;
+				font-size: 1.5rem;
+				padding: 20px 50px;
+				text-decoration: none;
+				border: none;
+				outline: none;
+				margin: 10px 0;
+				&:hover {
+					color: gold;
+					background-color: black;
+				}
+			}
+		}
+		&__image {
+			width: 45%;
+			height: 80%;
+			opacity: 1;
+			&__elgado {
+				width: 100%
+			}
+		}
+	}
+}

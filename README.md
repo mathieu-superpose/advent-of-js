@@ -86,7 +86,17 @@ A simple Range Slider that updates a price
 
 - I can move the knob on the range and the dollar amount above updates itself.
 
+## 06: Meteo
+
+### Description
 
 
+### User stories
+
+- I can move the knob on the range and the dollar amount above updates itself.
+
+### Useful ressources
+
+[Get geolocalisation]](https://www.pluralsight.com/guides/how-to-use-geolocation-call-in-reactjs)
 
 
