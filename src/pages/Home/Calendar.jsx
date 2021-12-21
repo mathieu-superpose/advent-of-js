@@ -44,7 +44,7 @@ const Calendar = () => {
       <img className="Calendar__small" src={day16} alt="advent calendar day 16" />
       <img className="Calendar__small" src={day18} alt="advent calendar day 18" />
       <img className="Calendar__small" src={day19} alt="advent calendar day 19" />
-      <img className="Calendar__small" src={day20} alt="advent calendar day 20" />
+      <Link to="/tabbed-content"><img className="Calendar__small" src={day20} alt="advent calendar day 20" /></Link>
       <img className="Calendar__small" src={day21} alt="advent calendar day 21" />
       <img className="Calendar__small" src={day22} alt="advent calendar day 22" />
       <img className="Calendar__high24" src={day2324} alt="advent calendar days 23 and 24" />
