@@ -41,13 +41,13 @@ const Signup = () => {
 		const password = e.target.value
 		if (password === "") {
 			setValidState({ ...validState, password: "" })
-		} else if(/^[\w._-$*+=&!?,]{8,15}$/.test(password)) {
+		} else if(/^[\w._-]{8,15}$/.test(password)) {
 			setFormState({ ...formState, password })
 			setValidState({ ...validState, password: "ok" })
 		} else {
-			if(/[^\w._-$*+=&!?,]/.test(password)) setValidState({ ...validState, password: "no spacing or forbidden characters" })
-			if(/^[\w._-$*+=&!?,]{1,7}$/.test(password)) setValidState({ ...validState, password: "minimum 8 characters" })
-			if(/^[\w._-$*+=&!?,]{16,}$/.test(password)) setValidState({ ...validState, password: "maximum 15 characters" })
+			if(/[^\w._-]/.test(password)) setValidState({ ...validState, password: "no spacing or forbidden characters" })
+			if(/^[\w._-]{1,7}$/.test(password)) setValidState({ ...validState, password: "minimum 8 characters" })
+			if(/^[\w._-]{16,}$/.test(password)) setValidState({ ...validState, password: "maximum 15 characters" })
 		}
 	}
 
