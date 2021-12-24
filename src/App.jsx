@@ -11,6 +11,7 @@ import CustomModal from './pages/CustomModal/CustomModal'
 import TabbedContent from './pages/TabbedContent'
 import Signup from './pages/Signup'
 import Toaster from './pages/Toaster'
+import Password from './pages/Password'
 
 import './App.scss'
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/tabbed-content" element={<TabbedContent />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/toaster" element={<Toaster />} />
+        <Route path="/password" element={<Password />} />
       </Routes>
     </div>
   )
