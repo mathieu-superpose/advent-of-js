@@ -82,6 +82,20 @@
 
 				}
 			}
+			&__success,
+			&__error {
+				position: absolute;
+				width: 400px;
+				top: 30px;
+				left: 460px;
+				display: flex;
+				flex-direction: row;
+				&__image {
+				}
+				&__text {
+					width: 300px;
+				}
+			}
 		}
 	}
 }
