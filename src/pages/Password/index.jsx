@@ -34,11 +34,25 @@ const Password = () => {
 		length: 12,
 	})
 	const [password, setPassword] = useState(generatePassword(state))
+	const [copy, setCopy] = useState("copy")
 
 	const handleCharChange = (e) => {
 		const value = e.target.value;
 		setState({ ...state, length: value })
 	}
+
+	const handlePasswordCopy = () => {
+		if(password === "select characters") {
+			setCopy("error")
+		} else {
+			setCopy("copied")
+			navigator.clipboard.writeText(password);
+		}
+	}
+
+	useEffect(() => {
+		if(copy !== "copy") setTimeout(() => setCopy("copy"), 1200)
+	}, [copy])
 
 	useEffect(() => {
 		setPassword(generatePassword(state))
@@ -51,7 +65,7 @@ const Password = () => {
 					<div className="PassCard__field__password">
 						<p>{password}</p>
 					</div>
-					<button className="PassCard__field__copy">
+					<button className={`PassCard__field__${copy}`} onClick={() => handlePasswordCopy()}>
 						<svg
 							width="55"
 							height="55"
@@ -62,7 +76,7 @@ const Password = () => {
 							<path d="M37.3147 2.83081H20.6332C18.1514 2.83081 16.1332 4.85131 16.1332 7.33081V38.8308C16.1332 41.3126 18.1514 43.3308 20.6332 43.3308H43.1332C45.6149 43.3308 47.6332 41.3126 47.6332 38.8308V13.1493L37.3147 2.83081ZM43.1354 38.8308H20.6332V7.33081H34.1332V16.3308H43.1332L43.1354 38.8308Z" />
 							<path d="M11.6332 11.8308H7.13318V47.8308C7.13318 50.3126 9.15143 52.3308 11.6332 52.3308H38.6332V47.8308H11.6332V11.8308Z" />
 						</svg>
-						<span>Copied!</span>
+						<span>{copy === "copied" ? "Copied!" : "Error!"}</span>
 					</button>
 				</div>
 				<div className="PassCard__field">
