@@ -1,19 +1,56 @@
+import { useState, useEffect } from 'react'
+
 import "./Password.scss";
 
+const SYMBOLS = "@#$%"
+const NUMBERS = "23456789"
+const LOWERCASE = "abcdefghjkmnqrstuvwxyz"
+const UPPERCASE = "ABCDEFGHIJKMNPQRSTUVWXYZ"
+const SIMILAR = "il1Lo0O"
+
+const generatePassword = ({ symbols, numbers, lowercase, uppercase, similar, length }) => {
+	let pool = ""
+	if(symbols) pool += SYMBOLS;
+	if(numbers) pool += NUMBERS;
+	if(lowercase) pool += LOWERCASE;
+	if(uppercase) pool += UPPERCASE;
+	if(similar) pool += SIMILAR;
+	if(pool.length === 0) return "select characters"
+	let pass = ""
+	for(let i = 0; i < length; i++) {
+		const index = Math.floor(Math.random() * pool.length)
+		pass += pool[index]
+	}
+	return pass;
+}
+
 const Password = () => {
+	const [state, setState] = useState({
+		symbols: false,
+		numbers: false,
+		lowercase: false,
+		uppercase: false,
+		similar: false,
+		length: 12,
+	})
+	const [password, setPassword] = useState(generatePassword(state))
+
+	const handleCharChange = (e) => {
+		const value = e.target.value;
+		setState({ ...state, length: value })
+	}
+
+	useEffect(() => {
+		setPassword(generatePassword(state))
+	}, [state])
+
 	return (
 		<div className="Password">
 			<div className="PassCard">
 				<div className="PassCard__field">
-					<input
-						type="text"
-						name="password"
-						id="password"
-						value=""
-						min="6"
-						max="32"
-						steps="1"
-					/>
+					<div className="PassCard__field__password">
+						<p>{password}</p>
+					</div>
 					<button className="PassCard__field__copy">
 						<svg
 							width="55"
@@ -33,11 +70,12 @@ const Password = () => {
 						type="range"
 						name="length"
 						id="length"
-						value="12"
 						min="6"
 						max="32"
+						defaultValue="12"
+						onChange={(e) => handleCharChange(e)}
 					/>
-					<span id="lengthText">12</span> characters
+					<p><span id="lengthText">{state.length}</span> characters</p>
 				</div>
 				<div className="PassCard__field">
 					<input
@@ -45,9 +83,10 @@ const Password = () => {
 						name="symbols"
 						id="symbols"
 						value="true"
-						checked="true"
+						defaultChecked={state.symbols}
+						onClick={() => setState({ ...state, symbols: !state.symbols })}
 					/>
-					<label for="symbols">
+					<label htmlFor="symbols">
 						<strong>Include Symbols</strong> (@#$%)
 					</label>
 				</div>
@@ -56,9 +95,10 @@ const Password = () => {
 						type="checkbox"
 						name="numbers"
 						id="numbers"
-						checked="true"
+						defaultChecked={state.numbers}
+						onClick={() => setState({ ...state, numbers: !state.numbers })}
 					/>
-					<label for="numbers">
+					<label htmlFor="numbers">
 						<strong>Include Numbers</strong> (1234)
 					</label>
 				</div>
@@ -67,9 +107,10 @@ const Password = () => {
 						type="checkbox"
 						name="lowercase"
 						id="lowercase"
-						checked="true"
+						defaultChecked={state.lowercase}
+						onClick={() => setState({ ...state, lowercase: !state.lowercase })}
 					/>
-					<label for="lowercase">
+					<label htmlFor="lowercase">
 						<strong>Include Lowercase Characters</strong> (abcd)
 					</label>
 				</div>
@@ -78,9 +119,10 @@ const Password = () => {
 						type="checkbox"
 						name="uppercase"
 						id="uppercase"
-						checked="true"
+						defaultChecked={state.uppercase}
+						onClick={() => setState({ ...state, uppercase: !state.uppercase })}
 					/>
-					<label for="uppercase">
+					<label htmlFor="uppercase">
 						<strong>Include Uppercase Characters</strong> (ABCD)
 					</label>
 				</div>
@@ -89,9 +131,10 @@ const Password = () => {
 						type="checkbox"
 						name="similar"
 						id="similar"
-						checked="true"
+						defaultChecked={state.similar}
+						onClick={() => setState({ ...state, similar: !state.similar })}
 					/>
-					<label for="similar">
+					<label htmlFor="similar">
 						<strong>Include Similar Characters</strong> (i, l, 1, L,
 						o, 0, O)
 					</label>
