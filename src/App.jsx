@@ -10,6 +10,7 @@ import BillAmount from './pages/BillAmount/BillAmount'
 import CustomModal from './pages/CustomModal/CustomModal'
 import TabbedContent from './pages/TabbedContent'
 import Signup from './pages/Signup'
+import Toaster from './pages/Toaster'
 
 import './App.scss'
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/custom-modal" element={<CustomModal />} />
         <Route path="/tabbed-content" element={<TabbedContent />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/toaster" element={<Toaster />} />
       </Routes>
     </div>
   )
