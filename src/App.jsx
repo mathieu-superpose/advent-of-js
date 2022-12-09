@@ -12,6 +12,7 @@ import TabbedContent from './pages/TabbedContent'
 import Signup from './pages/Signup'
 import Toaster from './pages/Toaster'
 import Password from './pages/Password'
+import Podcasts from './pages/Podcasts'
 
 import './App.scss'
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/toaster" element={<Toaster />} />
         <Route path="/password" element={<Password />} />
+        <Route path="/podcasts" element={<Podcasts />} />
       </Routes>
     </div>
   )
