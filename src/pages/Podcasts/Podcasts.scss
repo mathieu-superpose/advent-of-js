@@ -38,39 +38,45 @@
         margin: 0 0 40px 0;
         padding: 0;
       }
-      
+
       & input[type="checkbox"] {
         display: none;
       }
-      
+
       & ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
       }
-      
+
       & li {
         margin-bottom: 24px;
         font-size: 1rem;
       }
-      
+
       & label {
         cursor: pointer;
       }
-      
+
       & input[type="checkbox"] + span {
         background: url("./src/img/checkbox--unchecked.svg") left top no-repeat;
         background-size: 20px 20px;
         min-height: 20px;
         padding-left: 30px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently  */
       }
-      
+
       & input[type="checkbox"]:checked + span {
         background-image: url("./src/img/checkbox--checked.svg");
         text-decoration: line-through;
         color: #c9cdd1;
       }
-      
+
       & button {
         background: #8c59ff;
         border: none;
@@ -84,14 +90,10 @@
         letter-spacing: 2px;
         cursor: pointer;
       }
-      
+
       & button:hover {
         background: #543599;
       }
     }
   }
 }
-
-
-
-

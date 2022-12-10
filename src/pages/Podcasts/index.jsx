@@ -1,8 +1,100 @@
+import { useEffect, useState } from "react";
+import { useShiftPressed } from "./hooks/useShiftPressed";
+
 import cover from "./src/img/podcast-cover.png";
+import dataEpisodes from "./src/data/episodes.json";
 
 import "./Podcasts.scss";
 
+const Checkbox = ({
+  description,
+  title,
+  listened,
+  setListened,
+  handleLastChecked,
+}) => {
+  const [checked, setChecked] = useState(listened[title] || false);
+
+  useEffect(() => {
+    const checkedList = { ...listened };
+    checkedList[`${title}`] = checked;
+
+    localStorage.setItem("is-open", JSON.stringify(checkedList));
+    setListened(checkedList);
+  }, [checked]);
+
+  useEffect(() => {
+    setChecked(listened[title] || false);
+  }, [listened]);
+
+  const handleCheckChange = () => {
+    handleLastChecked(title);
+    setChecked(!checked);
+  };
+
+  return (
+    <li>
+      <label htmlFor={title}>
+        <input
+          type="checkbox"
+          checked={checked}
+          name={title}
+          id={title}
+          onChange={handleCheckChange}
+        />
+        <span>{description}</span>
+      </label>
+    </li>
+  );
+};
+
 const Podcasts = () => {
+  const [episodes] = useState(Object.values(dataEpisodes));
+  const [listened, setListened] = useState(
+    JSON.parse(localStorage.getItem("is-open")) || {}
+  );
+  const [lastChecked, setLastChecked] = useState("");
+  const shiftPressed = useShiftPressed();
+
+  const handleLastChecked = (title) => {
+    if (!shiftPressed) {
+      setLastChecked(title);
+      return null;
+    }
+
+    const previousIndex = episodes.findIndex((object) => {
+      return object.title === lastChecked;
+    });
+
+    if (previousIndex === -1) {
+      setLastChecked(title);
+      return null;
+    }
+
+    const currentIndex = episodes.findIndex((object) => {
+      return object.title === title;
+    });
+
+    if (previousIndex === currentIndex) return null;
+
+    const appliedState = listened[episodes[previousIndex].title];
+    const newListened = {...listened}
+
+    for (let i = Math.min(previousIndex, currentIndex); i <= Math.max(previousIndex, currentIndex); i++) {
+      newListened[episodes[i].title] = appliedState;
+    }
+
+    setLastChecked(title);
+    setListened(newListened);
+  };
+
+  const markAll = () => {
+    const newList = { ...listened };
+    for (const episode of episodes) newList[episode.title] = true;
+
+    setListened({ ...newList });
+  };
+
   return (
     <div className="Podcasts">
       <div className="Podcasts__wrapper">
@@ -13,69 +105,19 @@ const Podcasts = () => {
           <h1>Listen to all the Compressed.fm Episodes</h1>
 
           <ul>
-            <li>
-              <label for="episode-1">
-                <input type="checkbox" name="episode-1" id="episode-1" />
-                <span>1 || Trailer</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-2">
-                <input type="checkbox" name="episode-2" id="episode-2" />
-                <span>2 || James Q Quick Origin Story</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-3">
-                <input type="checkbox" name="episode-3" id="episode-3" />
-                <span>3 || Amy Dutton's Origin Story</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-4">
-                <input type="checkbox" name="episode-4" id="episode-4" />
-                <span>4 || Starting a New Development Project</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-5">
-                <input type="checkbox" name="episode-5" id="episode-5" />
-                <span>5 || How Do you Start a New Design Project?</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-6">
-                <input type="checkbox" name="episode-6" id="episode-6" />
-                <span>6 || Freelancing (Part 1)</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-7">
-                <input type="checkbox" name="episode-7" id="episode-7" />
-                <span>7 || Freelancing (Part 2)</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-8">
-                <input type="checkbox" name="episode-8" id="episode-8" />
-                <span>8 || The Tech Behind jamesqquick.com</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-9">
-                <input type="checkbox" name="episode-9" id="episode-9" />
-                <span>9 || The Tech Behind SelfTeach.me</span>
-              </label>
-            </li>
-            <li>
-              <label for="episode-10">
-                <input type="checkbox" name="episode-10" id="episode-10" />
-                <span>10 || Tech Behind SelfTeach.me</span>
-              </label>
-            </li>
+            {episodes.map((episode) => (
+              <Checkbox
+                key={episode.title}
+                description={episode.description}
+                title={episode.title}
+                listened={listened}
+                setListened={setListened}
+                handleLastChecked={handleLastChecked}
+              />
+            ))}
           </ul>
 
-          <button>Mark as Played</button>
+          <button onClick={markAll}>Mark as Played</button>
         </div>
       </div>
     </div>
