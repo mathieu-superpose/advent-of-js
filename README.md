@@ -76,6 +76,17 @@ A simple game aiming to press from your keyboard the keys highlighted on screen
 [Global Keyboard Event in React]](https://stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks)
 
 
+## 05: Podcasts
+
+### Description
+
+Check multiple checkboxes at one time.
+
+### User stories
+
+- I can see the list of podcast episodes
+- I can check one episode, and shift-click to select/unselect all the episodes in between
+
 ## 06: Slidebar
 
 ### Description
@@ -86,7 +97,7 @@ A simple Range Slider that updates a price
 
 - I can move the knob on the range and the dollar amount above updates itself.
 
-## 06: Meteo
+## 08: Meteo
 
 ### Description
 
