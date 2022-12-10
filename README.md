@@ -56,7 +56,7 @@ A piano playing various sounds by clicking on the keys.
 - I can see the keyboard centered on the page
 - I can see a color change when I hover over a specific key (white becomes yellow and black pink)
 - I can hear an audio clip when I click on a specific key
-- I can hear 2 sounds simultaneaously if I rapidly click on two separate keys 
+- I can hear 2 sounds simultaneaously if I rapidly click on two separate keys
 
 ## 04: Keyboard
 
@@ -73,8 +73,7 @@ A simple game aiming to press from your keyboard the keys highlighted on screen
 
 ### Useful ressources
 
-[Global Keyboard Event in React]](https://stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks)
-
+[Global Keyboard Event in React](https://stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks)
 
 ## 05: Podcasts
 
@@ -97,10 +96,21 @@ A simple Range Slider that updates a price
 
 - I can move the knob on the range and the dollar amount above updates itself.
 
-## 08: Meteo
+## 07: Tip Calculator
 
 ### Description
 
+A simple way to split a bill including tips
+
+### User stories
+
+- I can fill the bill amount and number of people
+- I can select the tip percentage
+- I can see the total amount of tips and due amount per person
+
+## 08: Meteo
+
+### Description
 
 ### User stories
 
@@ -108,6 +118,4 @@ A simple Range Slider that updates a price
 
 ### Useful ressources
 
-[Get geolocalisation]](https://www.pluralsight.com/guides/how-to-use-geolocation-call-in-reactjs)
-
-
+[Get geolocalisation](https://www.pluralsight.com/guides/how-to-use-geolocation-call-in-reactjs)
