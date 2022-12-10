@@ -1,0 +1,62 @@
+.CustomModal {
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	display: flex;
+	justify-content: center;
+	&__container {
+		position: relative;
+		&__bg {
+		height: 100%;
+		background: orange;
+		}
+		&__btn {
+			position: absolute;
+			height: 22px;
+			width: 22px;
+			background: orange;
+			outline: none;
+			border: none;
+			border-radius: 50%;
+			left: 10%;
+			top: 12%;
+			opacity: .8;
+			transition: all .4s;
+			&:after {
+				content: '';
+				position: absolute;
+				left: calc(10% - 2px);
+				top: calc(12% - 2px);
+				height: 22px;
+				width: 22px;
+				border-radius: 50%;
+				border: 1px solid orange;
+				transform: scale(1.2);
+				animation: grow 1s infinite;
+				opacity: .8;
+			}
+			&:hover {
+				transform: scale(1.1);
+				opacity: 1;
+				cursor: pointer;
+				&:after {
+					content: '';
+					position: absolute;
+					left: calc(10% - 6px);
+					top: calc(12% - 7px);
+					height: 30px;
+					width: 30px;
+					border-radius: 50%;
+					border: 1px solid orange;
+					transform: scale(1.5);
+					animation: grow .7s infinite;
+				}
+			}
+		}
+	}
+}
+
+@keyframes grow {
+  from { transform: scale(1); }
+  to   { transform: scale(var(--scale, 2)); }
+}

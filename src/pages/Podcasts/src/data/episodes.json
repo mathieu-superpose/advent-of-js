@@ -1,0 +1,33 @@
+{
+  "0": { "title": "episode-1", "description": "1 || Trailer" },
+  "1": {
+    "title": "episode-2",
+    "description": "2 || James Q Quick Origin Story"
+  },
+  "2": {
+    "title": "episode-3",
+    "description": "3 || Amy Dutton's Origin Story"
+  },
+  "3": {
+    "title": "episode-4",
+    "description": "4 || Starting a New Development Project"
+  },
+  "4": {
+    "title": "episode-5",
+    "description": "5 || How Do you Start a New Design Project?"
+  },
+  "5": { "title": "episode-6", "description": "6 || Freelancing (Part 1)" },
+  "6": { "title": "episode-7", "description": "7 || Freelancing (Part 2)" },
+  "7": {
+    "title": "episode-8",
+    "description": "8 || The Tech Behind jamesqquick.com"
+  },
+  "8": {
+    "title": "episode-9",
+    "description": "9 || The Tech Behind SelfTeach.me"
+  },
+  "9": {
+    "title": "episode-10",
+    "description": "10 || Tech Behind SelfTeach.me"
+  }
+}

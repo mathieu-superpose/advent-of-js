@@ -1,0 +1,91 @@
+.Toast {
+	background: #8D58FF;
+	color: white;
+	padding: 55px;
+	width: 520px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	transition: bottom 1s ease-in-out;
+	&__close {
+		position: absolute;
+		top: -40px;
+		left: 45px;
+		&__btn {
+			background: none;
+			border: none;
+			text-transform: uppercase;
+			font-family: serif;
+			font-size: 1.25rem;
+			line-height: 1rem;
+			letter-spacing: 0.03em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			font-family: 'Bebas Neue', cursive;
+			color: #3200A0;
+			cursor: pointer;
+		}
+	}
+	&__cover {
+		position: absolute;
+		right: -120px;
+		top: -120px;
+		box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.25);
+		opacity: 1;
+	}
+	&__title {
+		font-family: 'Bebas Neue', cursive;
+		text-transform: uppercase;
+		font-size: 5.875rem;
+		padding: 0;
+		margin: 0;
+		line-height: 4.5rem;
+		font-weight: normal;
+	}
+	&__description {
+		font-family: 'Roboto Mono', monospace;
+		font-size: 1rem;
+		line-height: 1.875rem;
+		padding-bottom: 30px;
+	}
+	&__email {
+		display: flex;
+		align-items: center;
+		&__field {
+			& label {
+				color: #FAFF00;
+				font-family: 'Roboto Mono', monospace;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 1rem;
+				line-height: 1;
+				display: block;
+				margin-bottom: 10px;
+			}
+			& input[type=email] {
+				background: #b686ff;
+				width: 325px;
+				height: 55px;
+				border-radius: 4px;
+				font-family: 'Roboto Mono', monospace;
+				color: black;
+				font-size: 1.125;
+				padding: 0 20px;
+				border: none;
+				margin-right: 10px;;
+			}
+		}
+		&__submit {
+			background: none;
+			border: none;
+			height: 55px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+	}
+}

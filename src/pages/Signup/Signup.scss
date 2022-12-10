@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap');
+
+.Signup {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Inter', sans-serif;
+	--primary: #1400FF;
+	&__form {
+		display: flex;
+		flex-direction: column;
+		&__field {
+			position: relative;
+  			margin-bottom: 20px;
+  			& input[type=text],
+			& input[type=email],
+			& input[type=password] {
+				border: 2px solid #D4D4D4;
+				border-radius: 4px;
+				padding: 0 20px;
+				width: 450px;
+				height: 62px;
+				margin: 10px 0 0 0;
+				outline: none;
+				box-sizing: border-box;
+				font-size: 1.5rem;
+				font-family: 'Inter', sans-serif;
+				color: black;
+				display: block;
+				text-align: left;
+				&:focus {
+					border-color: var(--primary);
+  					label: var(--primary);
+				}
+			}
+			& label {
+				display: inline-block;
+				color: var(--primary);
+				font-size: 0.875rem;
+				font-weight: 500;
+				position: absolute;
+				background: white;
+				padding: 0 5px;
+				left: 20px;
+				top: 0;
+				pointer-events: none;
+				transition: all .25s ease-in-out;
+			}
+			& input[type=text]:placeholder-shown + label,
+			& input[type=email]:placeholder-shown + label,
+			& input[type=password]:placeholder-shown + label {
+				font-size: 1.5rem;
+				top: 31px;
+			}
+			& input[type=text]:focus + label,
+			& input[type=email]:focus + label,
+			& input[type=password]:focus + label {
+				font-size: 0.875rem;
+				top: 0;
+			}
+			&__submit {
+				background: var(--primary);
+				color: white;
+				border-radius: 4px;
+				font-weight: 700;
+				border: none;
+				width: 450px;
+				height: 62px;
+				font-size: 1.5rem;
+				margin-top: 10px;
+			}
+			&__show {
+				outline: none;
+				border: none;
+				background: none;
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				&__image {
+
+				}
+			}
+			&__success,
+			&__error {
+				position: absolute;
+				width: 400px;
+				top: 30px;
+				left: 460px;
+				display: flex;
+				flex-direction: row;
+				&__image {
+				}
+				&__text {
+					width: 300px;
+				}
+			}
+		}
+	}
+}
