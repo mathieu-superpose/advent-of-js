@@ -1,0 +1,23 @@
+.EditableInput {
+  &__field {
+    display: flex;
+    align-items: flex-end;
+
+    & input[type="text"] {
+      text-align: center;
+      font-size: 3.875rem;
+      font-family: "Inter", sans-serif;
+      border: none;
+      background: none;
+      outline: none;
+      margin-right: 10px;
+      width: 100%;
+      border-bottom: 3px dotted #b3b3b3;
+    }
+  }
+  &__label {
+    margin-bottom: 45px;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
