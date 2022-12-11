@@ -1,21 +1,22 @@
 import { Routes, Route } from "react-router-dom";
 
-import Home from './pages/Home'
-import Pomodoro from './pages/Pomodoro/Pomodoro'
-import Ecommerce from './pages/Ecommerce/Ecommerce'
-import Piano from './pages/Piano/Piano'
-import Keyboard from './pages/Keyboard/Keyboard'
-import Slidebar from './pages/Slidebar/Slidebar'
-import BillAmount from './pages/BillAmount/BillAmount'
-import CustomModal from './pages/CustomModal/CustomModal'
-import TabbedContent from './pages/TabbedContent'
-import Signup from './pages/Signup'
-import Toaster from './pages/Toaster'
-import Password from './pages/Password'
-import Podcasts from './pages/Podcasts'
-import TipCalculator from './pages/TipCalculator'
+import Home from "./pages/Home";
+import Pomodoro from "./pages/Pomodoro/Pomodoro";
+import Ecommerce from "./pages/Ecommerce/Ecommerce";
+import Piano from "./pages/Piano/Piano";
+import Keyboard from "./pages/Keyboard/Keyboard";
+import Slidebar from "./pages/Slidebar/Slidebar";
+import BillAmount from "./pages/BillAmount/BillAmount";
+import CustomModal from "./pages/CustomModal/CustomModal";
+import TabbedContent from "./pages/TabbedContent";
+import Signup from "./pages/Signup";
+import Toaster from "./pages/Toaster";
+import Password from "./pages/Password";
+import Podcasts from "./pages/Podcasts";
+import TipCalculator from "./pages/TipCalculator";
+import Meteo from "./pages/Meteo";
 
-import './App.scss'
+import "./App.scss";
 
 function App() {
   return (
@@ -35,9 +36,10 @@ function App() {
         <Route path="/password" element={<Password />} />
         <Route path="/podcasts" element={<Podcasts />} />
         <Route path="/tipcalcultor" element={<TipCalculator />} />
+        <Route path="/meteo" element={<Meteo />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
