@@ -13,6 +13,7 @@ import Signup from './pages/Signup'
 import Toaster from './pages/Toaster'
 import Password from './pages/Password'
 import Podcasts from './pages/Podcasts'
+import TipCalculator from './pages/TipCalculator'
 
 import './App.scss'
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/toaster" element={<Toaster />} />
         <Route path="/password" element={<Password />} />
         <Route path="/podcasts" element={<Podcasts />} />
+        <Route path="/tipcalcultor" element={<TipCalculator />} />
       </Routes>
     </div>
   )

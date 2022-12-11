@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto+Mono:wght@700&display=swap");
+
+.TipCalculator {
+  background: #f6f6f3;
+  padding: 0;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+  color: #333;
+  &__card {
+    background: #ffffff;
+    box-shadow: 0px 0px 44px rgba(148, 146, 120, 0.23);
+    border-radius: 20px;
+    width: 765px;
+    height: 500px;
+    padding-top: 55px;
+    &__editableContent {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+    &__tipPercentList {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 35px;
+      list-style: none;
+      background: #eeeeee;
+      border-top: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+    }
+  }
+}

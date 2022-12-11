@@ -81,13 +81,15 @@ const Calendar = () => {
           />
         </Link>
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day07}
-          alt="advent calendar day 7"
-        />
-      </li>
+      <Link to="/tipcalcultor">
+        <li>
+          <img
+            className="Calendar__small"
+            src={day07}
+            alt="advent calendar day 7"
+          />
+        </li>
+      </Link>
       <li>
         <img
           className="Calendar__small"
