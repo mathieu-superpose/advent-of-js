@@ -1,0 +1,32 @@
+.Selectable,
+.Selectable--selected {
+  & input[type="radio"] {
+    display: none;
+  }
+  & label {
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
+    width: 135px;
+    height: 68px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.Selectable {
+  & label {
+    background: #ffffff;
+    color: #60c1b6;
+  }
+}
+
+.Selectable--selected {
+  & label {
+    background: #60c1b6;
+    color: white;
+  }
+}
