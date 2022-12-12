@@ -119,3 +119,4 @@ A simple way to split a bill including tips
 ### Useful ressources
 
 [Get geolocalisation](https://www.pluralsight.com/guides/how-to-use-geolocation-call-in-reactjs)
+[Meteo API](https://www.7timer.info/)
