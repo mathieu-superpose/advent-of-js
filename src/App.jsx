@@ -15,6 +15,7 @@ import Password from "./pages/Password";
 import Podcasts from "./pages/Podcasts";
 import TipCalculator from "./pages/TipCalculator";
 import Meteo from "./pages/Meteo";
+import Caroussel from "./pages/Caroussel";
 
 import "./App.scss";
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/podcasts" element={<Podcasts />} />
         <Route path="/tipcalcultor" element={<TipCalculator />} />
         <Route path="/meteo" element={<Meteo />} />
+        <Route path="/caroussel" element={<Caroussel />} />
       </Routes>
     </div>
   );
