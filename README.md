@@ -119,4 +119,20 @@ A simple way to split a bill including tips
 ### Useful ressources
 
 [Get geolocalisation](https://www.pluralsight.com/guides/how-to-use-geolocation-call-in-reactjs)
+
 [Meteo API](https://www.7timer.info/)
+
+## 09: Caroussel
+
+### Description
+
+An Image Carousel
+
+### User stories
+
+- I can toggle left and right through the image thumbnails
+- I can click on an image to select it manually
+
+### Future Improvement
+
+Infinite scrolling

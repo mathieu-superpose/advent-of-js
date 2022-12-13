@@ -99,6 +99,7 @@ const Calendar = () => {
           />
         </li>
       </Link>
+      <Link to="/caroussel">
       <li>
         <img
           className="Calendar__small"
@@ -106,6 +107,7 @@ const Calendar = () => {
           alt="advent calendar day 9"
         />
       </li>
+      </Link>
       <li>
         <img
           className="Calendar__large"
