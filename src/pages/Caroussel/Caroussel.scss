@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+.Caroussel {
+  position: relative;
+  font-family: "Roboto Mono", monospace;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Viewer {
+  width: calc(100vw - 200px);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__image {
+    height: 80%;
+  }
+  &__description {
+    margin-top: 20px;
+  }
+}
+
+.Selector {
+  height: 20vh;
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  height: 20vh;
+  position: relative;
+  &__container,
+  &__container--selected {
+    position: absolute;
+    top: 0;
+    right: calc(50% - 10vh);
+    height: 20vh;
+    width: 20vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s transform;
+    &__image {
+      height: 200%;
+    }
+  }
+  &__container--selected {
+    outline: 10px solid #ff00c7;
+    outline-offset: -10px;
+  }
+}
+
+.Navigation--left,
+.Navigation--right {
+  position: absolute;
+  background: rgba(255, 0, 199, 0.3);
+  width: 100px;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+  box-sizing: border-box;
+  transition: 0.3s background;
+  border: none;
+  &:hover {
+    background: rgba(255, 0, 199, 1);
+    cursor: pointer;
+  }
+}
+
+.Navigation--left {
+  left: 0;
+}
+
+.Navigation--right {
+  right: 0;
+  &__image {
+    transform: rotate(180deg);
+    margin: auto;
+  }
+}
