@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
+import useLastKeyPressed from "../../hooks/useLastKeyPressed";
 
 import "./PasswordVerifier.scss";
 
@@ -8,13 +9,15 @@ const PasswordVerifier = () => {
   const input2 = useRef();
   const input3 = useRef();
   const button = useRef();
+  const lastKeyPressed = useLastKeyPressed();
+  const [currentFocusName, setCurrentFocusName] = useState("");
 
   const handleInputValueChange = (e) => {
     const filledChar = e.target.value;
-    if(filledChar === "") {
+    if (filledChar === "") {
       e.target.style.background = "#f0f3fa";
     }
-    if(/[^\d]/.test(filledChar)) {
+    if (/[^\d]/.test(filledChar)) {
       e.target.style.background = "#FAA0A0";
     }
     if (/\d/.test(filledChar)) focusNext(e.target.name);
@@ -26,6 +29,14 @@ const PasswordVerifier = () => {
     if (currentFocusName === "verification_2") input3.current.focus();
     if (currentFocusName === "verification_3") button.current.focus();
   };
+
+  useEffect(() => {
+    if (/\d/.test(lastKeyPressed) && currentFocusName === "") {
+      input0.current.value = lastKeyPressed;
+      setCurrentFocusName("verification_1");
+      input1.current.focus();
+    }
+  }, [lastKeyPressed]);
 
   return (
     <div className="PasswordVerifier">
