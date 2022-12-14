@@ -100,13 +100,13 @@ const Calendar = () => {
         </li>
       </Link>
       <Link to="/caroussel">
-      <li>
-        <img
-          className="Calendar__small"
-          src={day09}
-          alt="advent calendar day 9"
-        />
-      </li>
+        <li>
+          <img
+            className="Calendar__small"
+            src={day09}
+            alt="advent calendar day 9"
+          />
+        </li>
       </Link>
       <li>
         <img
@@ -115,13 +115,15 @@ const Calendar = () => {
           alt="advent calendar days 10 and 11"
         />
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day12}
-          alt="advent calendar day 12"
-        />
-      </li>
+      <Link to="/rock-paper-scissors">
+        <li>
+          <img
+            className="Calendar__small"
+            src={day12}
+            alt="advent calendar day 12"
+          />
+        </li>
+      </Link>
       <li>
         <img
           className="Calendar__high13"
