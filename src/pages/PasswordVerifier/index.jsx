@@ -12,6 +12,48 @@ const PasswordVerifier = () => {
   const lastKeyPressed = useLastKeyPressed();
   const [currentFocusName, setCurrentFocusName] = useState("");
 
+  const focusNext = (currentFocusName) => {
+    if (currentFocusName === "verification_0") {
+      setCurrentFocusName("verification_1")
+      input1.current.focus();
+    }
+    if (currentFocusName === "verification_1") {
+      setCurrentFocusName("verification_2")
+      input2.current.focus();
+    }
+    if (currentFocusName === "verification_2") {
+      setCurrentFocusName("verification_3")
+      input3.current.focus();
+    }
+    if (currentFocusName === "verification_3") {
+      setCurrentFocusName("verification")
+      button.current.focus();
+    }
+  };
+
+  const handleBackSpacePress =  () => {
+    if(["", "verification"].includes(currentFocusName)) {
+      input3.current.value = "";
+      setCurrentFocusName("verification_3")
+      input3.current.focus();
+    } else if(currentFocusName === "verification_3" &&
+    input3.current.value === "") {
+      input2.current.value = "";
+      setCurrentFocusName("verification_2")
+      input2.current.focus();
+    } else if(currentFocusName === "verification_2" &&
+    input2.current.value === "") {
+      input1.current.value = "";
+      setCurrentFocusName("verification_1")
+      input1.current.focus();
+    } else if(currentFocusName === "verification_1" &&
+    input1.current.value === "") {
+      input0.current.value = "";
+      setCurrentFocusName("verification_0")
+      input0.current.focus();
+    }
+  }
+
   const handleInputValueChange = (e) => {
     const filledChar = e.target.value;
     if (filledChar === "") {
@@ -23,65 +65,35 @@ const PasswordVerifier = () => {
     if (/\d/.test(filledChar)) focusNext(e.target.name);
   };
 
-  const focusNext = (currentFocusName) => {
-    if (currentFocusName === "verification_0") {
-      input1.current.focus();
-    }
-    if (currentFocusName === "verification_1") {
-      input2.current.focus();
-    }
-    if (currentFocusName === "verification_2") {
-      input3.current.focus();
-    }
-    if (currentFocusName === "verification_3") {
-      button.current.focus();
-    }
-  };
-
   useEffect(() => {
-    console.log(currentFocusName);
+    if(lastKeyPressed === "Backspace") handleBackSpacePress();
 
-    if (
-      lastKeyPressed === "Backspace" &&
-      ["", "verification"].includes(currentFocusName)
-    ) {
-      input3.current.value = "";
-      setCurrentFocusName("verification_3")
-      input3.current.focus();
-    }
-    if (
-      lastKeyPressed === "Backspace" &&
-      currentFocusName === "verification_3" &&
-      input3.current.value === ""
-    ) {
-      input2.current.value = "";
-      setCurrentFocusName("verification_2")
-      input2.current.focus();
-    }
-    if (
-      lastKeyPressed === "Backspace" &&
-      currentFocusName === "verification_2" &&
-      input2.current.value === ""
-    ) {
-      input1.current.value = "";
-      setCurrentFocusName("verification_1")
-      input1.current.focus();
-    }
-    if (
-      lastKeyPressed === "Backspace" &&
-      currentFocusName === "verification_1" &&
-      input1.current.value === ""
-    ) {
-      input0.current.value = "";
-      setCurrentFocusName("verification_0")
-      input0.current.focus();
-    }
-
-    if (/\d/.test(lastKeyPressed) && currentFocusName === "") {
+    if (/^\d$/.test(lastKeyPressed) && currentFocusName === "") {
       input0.current.value = lastKeyPressed;
       input1.current.focus();
     }
+
   }, [lastKeyPressed]);
+
+  useEffect(() => {
+    const handlePasteAnywhere = event => {
+      const lastPastedText = event.clipboardData.getData('text');
+      if(/^\d{4}$/.test(lastPastedText)) {
+        const [i0, i1, i2, i3] = lastPastedText.split("");
+        input0.current.value = i0;
+        input1.current.value = i1;
+        input2.current.value = i2;
+        input3.current.value = i3;
+        button.current.focus();
+      }
+    };
+
+    window.addEventListener('paste', handlePasteAnywhere);
+
+    return () => {
+      window.removeEventListener('paste', handlePasteAnywhere);
+    };
+  }, []);
 
   return (
     <div className="PasswordVerifier" onClick={() => setCurrentFocusName("")}>
