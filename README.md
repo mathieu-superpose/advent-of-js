@@ -147,3 +147,8 @@ A simple Password form.
 
 - I can ype in a digit and get automatically taken to the next input
 - I can paste in a 4 digit code
+
+### Future Improvements
+
+- Fix delete
+- Fix rewrite
