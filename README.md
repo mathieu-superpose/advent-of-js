@@ -136,3 +136,14 @@ An Image Carousel
 ### Future Improvement
 
 Infinite scrolling
+
+## 10: Password Verifier
+
+### Description
+
+A simple Password form.
+
+### User stories
+
+- I can ype in a digit and get automatically taken to the next input
+- I can paste in a 4 digit code
