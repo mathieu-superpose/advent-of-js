@@ -136,3 +136,15 @@ An Image Carousel
 ### Future Improvement
 
 Infinite scrolling
+
+
+## 11: Collapsing sections
+
+### Description
+
+Collapsing sections
+
+### User stories
+
+- I can click on a collapsed question to expand it and view the answer.
+- I can click on a collapsed answer to collapse it and hide the answer.

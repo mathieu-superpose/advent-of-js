@@ -16,6 +16,7 @@ import Podcasts from "./pages/Podcasts";
 import TipCalculator from "./pages/TipCalculator";
 import Meteo from "./pages/Meteo";
 import Caroussel from "./pages/Caroussel";
+import CollapsingSections from "./pages/CollapsingSections";
 
 import "./App.scss";
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/tipcalcultor" element={<TipCalculator />} />
         <Route path="/meteo" element={<Meteo />} />
         <Route path="/caroussel" element={<Caroussel />} />
+        <Route path="/collapsing-sections" element={<CollapsingSections />} />
       </Routes>
     </div>
   );
