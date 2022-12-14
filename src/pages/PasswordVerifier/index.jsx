@@ -24,22 +24,67 @@ const PasswordVerifier = () => {
   };
 
   const focusNext = (currentFocusName) => {
-    if (currentFocusName === "verification_0") input1.current.focus();
-    if (currentFocusName === "verification_1") input2.current.focus();
-    if (currentFocusName === "verification_2") input3.current.focus();
-    if (currentFocusName === "verification_3") button.current.focus();
+    if (currentFocusName === "verification_0") {
+      input1.current.focus();
+    }
+    if (currentFocusName === "verification_1") {
+      input2.current.focus();
+    }
+    if (currentFocusName === "verification_2") {
+      input3.current.focus();
+    }
+    if (currentFocusName === "verification_3") {
+      button.current.focus();
+    }
   };
 
   useEffect(() => {
+    console.log(currentFocusName);
+
+    if (
+      lastKeyPressed === "Backspace" &&
+      ["", "verification"].includes(currentFocusName)
+    ) {
+      input3.current.value = "";
+      setCurrentFocusName("verification_3")
+      input3.current.focus();
+    }
+    if (
+      lastKeyPressed === "Backspace" &&
+      currentFocusName === "verification_3" &&
+      input3.current.value === ""
+    ) {
+      input2.current.value = "";
+      setCurrentFocusName("verification_2")
+      input2.current.focus();
+    }
+    if (
+      lastKeyPressed === "Backspace" &&
+      currentFocusName === "verification_2" &&
+      input2.current.value === ""
+    ) {
+      input1.current.value = "";
+      setCurrentFocusName("verification_1")
+      input1.current.focus();
+    }
+    if (
+      lastKeyPressed === "Backspace" &&
+      currentFocusName === "verification_1" &&
+      input1.current.value === ""
+    ) {
+      input0.current.value = "";
+      setCurrentFocusName("verification_0")
+      input0.current.focus();
+    }
+
     if (/\d/.test(lastKeyPressed) && currentFocusName === "") {
       input0.current.value = lastKeyPressed;
-      setCurrentFocusName("verification_1");
       input1.current.focus();
     }
   }, [lastKeyPressed]);
 
   return (
-    <div className="PasswordVerifier">
+    <div className="PasswordVerifier" onClick={() => setCurrentFocusName("")}>
       <div className="PasswordVerifier__card">
         <h1 className="PasswordVerifier__card__title">Authorization Code</h1>
         <p className="PasswordVerifier__card__subtitle">
@@ -53,6 +98,7 @@ const PasswordVerifier = () => {
               maxLength="1"
               name="verification_0"
               onChange={(e) => handleInputValueChange(e)}
+              onFocus={() => setCurrentFocusName("verification_0")}
             />
             <input
               ref={input1}
@@ -60,6 +106,7 @@ const PasswordVerifier = () => {
               maxLength="1"
               name="verification_1"
               onChange={(e) => handleInputValueChange(e)}
+              onFocus={() => setCurrentFocusName("verification_1")}
             />
             <input
               ref={input2}
@@ -67,6 +114,7 @@ const PasswordVerifier = () => {
               maxLength="1"
               name="verification_2"
               onChange={(e) => handleInputValueChange(e)}
+              onFocus={() => setCurrentFocusName("verification_2")}
             />
             <input
               ref={input3}
@@ -74,11 +122,13 @@ const PasswordVerifier = () => {
               maxLength="1"
               name="verification_3"
               onChange={(e) => handleInputValueChange(e)}
+              onFocus={() => setCurrentFocusName("verification_3")}
             />
           </div>
           <button
             ref={button}
             name="verification"
+            onFocus={() => setCurrentFocusName("verification")}
             className="PasswordVerifier__card__form__button"
           >
             Verify
