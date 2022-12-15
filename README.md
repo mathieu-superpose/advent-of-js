@@ -136,3 +136,14 @@ An Image Carousel
 ### Future Improvement
 
 Infinite scrolling
+
+## 14: Youtube Gallerie
+
+### Description
+
+A YouTube Video Gallery
+
+### User stories
+
+- I can view title, description, and embed of featured video from the channel
+- I can view gallery of title and thumbnails for other videos
