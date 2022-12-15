@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import previous from "./src/img/previous.svg";
 import next from "./src/img/next.svg";
 
-import "./Calendar.scss";
+import "./CalendarPage.scss";
 
 const MONTHS = [
   "January",
@@ -29,7 +29,7 @@ const getCurrentPeriod = () => {
   return new Date(`${year}-${month}-01`);
 };
 
-const Calendar = () => {
+const CalendarPage = () => {
   const [today] = useState(new Date());
   const [currentPeriod, setCurrentPeriod] = useState(getCurrentPeriod());
 
@@ -58,8 +58,8 @@ const Calendar = () => {
   };
 
   return (
-    <div className="Calendar">
-      <div className="Calendar__card">
+    <div className="CalendarPage">
+      <div className="CalendarPage__card">
         <header>
           <button onClick={handlePreviousMonth}>
             <img src={previous} alt="previous icon" />
@@ -82,4 +82,4 @@ const Calendar = () => {
   );
 };
 
-export default Calendar;
+export default CalendarPage;

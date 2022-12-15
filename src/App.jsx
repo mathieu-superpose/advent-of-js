@@ -16,7 +16,7 @@ import Podcasts from "./pages/Podcasts";
 import TipCalculator from "./pages/TipCalculator";
 import Meteo from "./pages/Meteo";
 import Caroussel from "./pages/Caroussel";
-import Calendar from "./pages/Calendar";
+import CalendarPage from "./pages/CalendarPage";
 
 import "./App.scss";
 
@@ -40,7 +40,7 @@ function App() {
         <Route path="/tipcalcultor" element={<TipCalculator />} />
         <Route path="/meteo" element={<Meteo />} />
         <Route path="/caroussel" element={<Caroussel />} />
-        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/calendar" element={<CalendarPage />} />
       </Routes>
     </div>
   );
