@@ -73,11 +73,19 @@ const Calendar = () => {
           <img src={day09} alt="advent calendar day 9" />
         </Link>
       </li>
+
       <li className="Calendar__large">
-        <Link to="collapsing-sections">
-          <img src={day1011} alt="advent calendar days 10 and 11" />
-        </Link>
+        <div className="Calendar__large__links">
+          <Link to="password-verifier">
+            <div className="Calendar__large__links__contentLeft" />
+          </Link>
+          <Link to="collapsing-sections">
+            <div className="Calendar__large__links__contentRight" />
+          </Link>
+        </div>
+        <img src={day1011} alt="advent calendar days 10 and 11" />
       </li>
+
       <li>
         <Link to="/rock-paper-scissors">
           <img
