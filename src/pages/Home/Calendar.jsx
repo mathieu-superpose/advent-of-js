@@ -138,13 +138,16 @@ const Calendar = () => {
           alt="advent calendar day 14"
         />
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day15}
-          alt="advent calendar day 15"
-        />
-      </li>
+      <Link to="/youtube-gallerie">
+        <li>
+          <img
+            className="Calendar__small"
+            src={day15}
+            alt="advent calendar day 15"
+          />
+        </li>
+      </Link>
+
       <li>
         <img
           className="Calendar__small"

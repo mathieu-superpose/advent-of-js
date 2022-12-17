@@ -1,4 +1,4 @@
-# Advent of Javascript 2021
+# Advent of Javascript 2022
 
 ## Presentation
 
@@ -136,3 +136,19 @@ An Image Carousel
 ### Future Improvement
 
 Infinite scrolling
+
+## 15: Youtube Gallerie
+
+### Description
+
+A YouTube Video Gallery
+
+### User stories
+
+- I can view title, description, and embed of featured video from the channel
+- I can view gallery of title and thumbnails for other videos
+
+### To be fixed
+
+CORS from embeded video:
+src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
