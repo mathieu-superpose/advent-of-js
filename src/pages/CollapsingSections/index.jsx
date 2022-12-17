@@ -71,7 +71,7 @@ const Question = ({ text, open, setOpen }) => {
           <img src={open ? question2 : question1} alt="question-mark icon" />
         </div>
 
-        <div class="Question__ctn__content">{text}</div>
+        <div className="Question__ctn__content">{text}</div>
       </div>
     </a>
   );
