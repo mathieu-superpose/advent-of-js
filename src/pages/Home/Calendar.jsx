@@ -78,7 +78,6 @@ const Calendar = () => {
       <li className="Calendar__small">
         <img src={day12} alt="advent calendar day 12" />
       </li>
-
       <li className="Calendar__high">
         <Link to="/table-of-content">
           <img src={day1317} alt="advent calendar day 13" />
@@ -115,7 +114,6 @@ const Calendar = () => {
       <li className="Calendar__small">
         <img src={day22} alt="advent calendar day 22" />
       </li>
-
     </ul>
   );
 };
