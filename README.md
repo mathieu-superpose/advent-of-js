@@ -1,4 +1,4 @@
-# Advent of Javascript 2021
+# Advent of Javascript 2022
 
 ## Presentation
 
@@ -137,7 +137,7 @@ An Image Carousel
 
 Infinite scrolling
 
-## 14: Youtube Gallerie
+## 15: Youtube Gallerie
 
 ### Description
 
