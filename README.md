@@ -137,6 +137,17 @@ An Image Carousel
 
 Infinite scrolling
 
+## 14: Calendar
+
+### Description
+
+A Calendar Viewer
+
+### User stories
+
+- I can view calendar with correct days, the current day highlighted
+- I can navigate through different months
+
 ## 15: Youtube Gallerie
 
 ### Description

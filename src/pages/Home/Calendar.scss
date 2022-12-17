@@ -1,49 +1,55 @@
 .Calendar {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	list-style: none;
-	&__small,
-	&__large,
-	&__high13,
-	&__high24 {
-		max-width: 80%;
-		&:hover {
-			animation: .6s linear 0s infinite move_card;
-		}
-	}
-	@media (min-width: 800px) {
-		display: grid;
-		gap: 1rem;
-		grid-template-columns: repeat(4, 1fr);
-		&__large {
-			grid-column: 2/4;
-		}
-		&__high13 {
-			grid-row: 4/6;
-		}
-		&__high24 {
-			grid-row: 5/7;
-			grid-column: 4;
-		}
-	}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  &__small,
+  &__large,
+  &__high {
+    max-width: 80%;
+    &:hover {
+      animation: 0.6s linear 0s infinite move_card;
+    }
+  }
+  @media (min-width: 800px) {
+    display: grid;
+    gap: .1rem;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+
+    &__large {
+
+	grid-column: span 2;
+
+    }
+    &__high {
+	  grid-row: span 2;
+    }
+    &__small,
+    &__large,
+    &__high {
+      & img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
 }
 
-@keyframes move_card { 
-	0% {
-		transform: rotateZ(0);
-	}
-	25% {
-		transform: rotateZ(5deg);
-	}
-	50% {
-		transform: rotateZ(0);
-	}
-	75% {
-		transform: rotateZ(-5deg);
-	}
-	100% {
-		transform: rotateZ(0);
-	}
+@keyframes move_card {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(0);
+  }
+  75% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
 }
