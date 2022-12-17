@@ -23,34 +23,65 @@ import CalendarPage from "./pages/CalendarPage";
 import YoutubeGallerie from "./pages/YoutubeGallerie";
 import TableOfContent from "./pages/TableOfContent";
 
+
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        {/* 0: index */}
         <Route path="/" element={<Home />} />
+        {/* 1: pomodoro */}
         <Route path="/pomodoro" element={<Pomodoro />} />
+        {/* 2: ecommerce */}
         <Route path="/ecommerce" element={<Ecommerce />} />
+        {/* 3: piano */}
         <Route path="/piano" element={<Piano />} />
+        {/* 4: keyboard */}
         <Route path="/keyboard" element={<Keyboard />} />
-        <Route path="/slidebar" element={<Slidebar />} />
-        <Route path="/billamount" element={<BillAmount />} />
-        <Route path="/custom-modal" element={<CustomModal />} />
-        <Route path="/tabbed-content" element={<TabbedContent />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/toaster" element={<Toaster />} />
-        <Route path="/password" element={<Password />} />
+        {/* 5: checkboxes (podcast) */}
         <Route path="/podcasts" element={<Podcasts />} />
+        {/* 6: slidebar */}
+        <Route path="/slidebar" element={<Slidebar />} />
+        {/* 7: tip calculator */}
         <Route path="/tipcalcultor" element={<TipCalculator />} />
+        <Route path="/billamount" element={<BillAmount />} />
+        {/* 8: tip meteo */}
         <Route path="/meteo" element={<Meteo />} />
+        {/* 9: caroussel */}
         <Route path="/caroussel" element={<Caroussel />} />
+        {/* 10: password verifier */}
         <Route path="/password-verifier" element={<PasswordVerifier />} />
+        {/* 11: collapsing sections */}
         <Route path="/collapsing-sections" element={<CollapsingSections />} />
+        {/* 12: rock paper scissors */}
         <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
+        {/* 13: modal */}
+        <Route path="/custom-modal" element={<CustomModal />} />
+        {/* 14: calendar */}
         <Route path="/calendar" element={<CalendarPage />} />
+        {/* 15: youtube gallerie */}
         <Route path="/youtube-gallerie" element={<YoutubeGallerie />} />
+        {/* 16: star rating */}
+
+        {/* 17: table of content */}
         <Route path="/table-of-content" element={<TableOfContent />} />
+        {/* 18: password generator */}
+        <Route path="/password" element={<Password />} />
+        {/* 19: signup */}
+        <Route path="/signup" element={<Signup />} />
+        {/* 20: tabbed content */}
+        <Route path="/tabbed-content" element={<TabbedContent />} />
+        {/* 21: simplified budget */}
+
+        {/* 22: credit card form */}
+
+        {/* 23: toaster */}
+        <Route path="/toaster" element={<Toaster />} />
+
+        {/* 24: table with pagniation */}
+
       </Routes>
     </div>
   );
