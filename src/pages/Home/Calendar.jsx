@@ -26,175 +26,102 @@ import "./Calendar.scss";
 const Calendar = () => {
   return (
     <ul className="Calendar">
-      <li>
+      <li className="Calendar__small">
         <Link to="/pomodoro">
-          <img
-            className="Calendar__small"
-            src={day01}
-            alt="advent calendar day 1"
-          />
+          <img src={day01} alt="advent calendar day 1" />
         </Link>
       </li>
-      <li>
+      <li className="Calendar__small">
         <Link to="/ecommerce">
-          <img
-            className="Calendar__small"
-            src={day02}
-            alt="advent calendar day 2"
-          />
+          <img src={day02} alt="advent calendar day 2" />
         </Link>
       </li>
 
-      <li>
+      <li className="Calendar__small">
         <Link to="/piano">
-          <img
-            className="Calendar__small"
-            src={day03}
-            alt="advent calendar day 3"
-          />
+          <img src={day03} alt="advent calendar day 3" />
         </Link>
       </li>
-      <li>
+      <li className="Calendar__small">
         <Link to="/keyboard">
-          <img
-            className="Calendar__small"
-            src={day04}
-            alt="advent calendar day 4"
-          />
+          <img src={day04} alt="advent calendar day 4" />
         </Link>
       </li>
-      <li>
+      <li className="Calendar__small">
         <Link to="/podcasts">
-          <img
-            className="Calendar__small"
-            src={day05}
-            alt="advent calendar day 5"
-          />
+          <img src={day05} alt="advent calendar day 5" />
         </Link>
       </li>
-      <li>
+      <li className="Calendar__small">
         <Link to="/slidebar">
+          <img src={day06} alt="advent calendar day 6" />
+        </Link>
+      </li>
+
+      <li className="Calendar__small">
+        <Link to="/tipcalcultor">
+          <img src={day07} alt="advent calendar day 7" />
+        </Link>
+      </li>
+      <li className="Calendar__small">
+        <Link to="/meteo">
+          <img src={day08} alt="advent calendar day 8" />
+        </Link>
+      </li>
+      <li className="Calendar__small">
+        <Link to="/caroussel">
+          <img src={day09} alt="advent calendar day 9" />
+        </Link>
+      </li>
+      <li className="Calendar__large">
+        <Link to="collapsing-sections">
+          <img src={day1011} alt="advent calendar days 10 and 11" />
+        </Link>
+      </li>
+      <li>
+        <Link to="/rock-paper-scissors">
           <img
             className="Calendar__small"
-            src={day06}
-            alt="advent calendar day 6"
+            src={day12}
+            alt="advent calendar day 12"
           />
         </Link>
       </li>
-      <Link to="/tipcalcultor">
-        <li>
-          <img
-            className="Calendar__small"
-            src={day07}
-            alt="advent calendar day 7"
-          />
-        </li>
-      </Link>
-      <Link to="/meteo">
-        <li>
-          <img
-            className="Calendar__small"
-            src={day08}
-            alt="advent calendar day 8"
-          />
-        </li>
-      </Link>
-      <Link to="/caroussel">
-        <li>
-          <img
-            className="Calendar__small"
-            src={day09}
-            alt="advent calendar day 9"
-          />
-        </li>
-      </Link>
-      <Link to="collapsing-sections">
-        <li>
-          <img
-            className="Calendar__large"
-            src={day1011}
-            alt="advent calendar days 10 and 11"
-          />
-        </li>
-      </Link>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day12}
-          alt="advent calendar day 12"
-        />
+      <li className="Calendar__high">
+        <Link to="/table-of-content">
+          <img src={day1317} alt="advent calendar day 13" />
+        </Link>
       </li>
-      <li>
-        <img
-          className="Calendar__high13"
-          src={day1317}
-          alt="advent calendar day 13"
-        />
+      <li className="Calendar__small">
+        <Link to="/calendar">
+          <img src={day14} alt="advent calendar day 14" />
+        </Link>
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day14}
-          alt="advent calendar day 14"
-        />
+      <li className="Calendar__small">
+        <img src={day15} alt="advent calendar day 15" />
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day15}
-          alt="advent calendar day 15"
-        />
+      <li className="Calendar__small">
+        <img src={day16} alt="advent calendar day 16" />
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day16}
-          alt="advent calendar day 16"
-        />
+      <li className="Calendar__small">
+        <img src={day18} alt="advent calendar day 18" />
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day18}
-          alt="advent calendar day 18"
-        />
+      <li className="Calendar__small">
+        <img src={day19} alt="advent calendar day 19" />
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day19}
-          alt="advent calendar day 19"
-        />
+      <li className="Calendar__high">
+        <img src={day2324} alt="advent calendar days 23 and 24" />
       </li>
-      <li>
+      <li className="Calendar__small">
         <Link to="/tabbed-content">
-          <img
-            className="Calendar__small"
-            src={day20}
-            alt="advent calendar day 20"
-          />
+          <img src={day20} alt="advent calendar day 20" />
         </Link>
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day21}
-          alt="advent calendar day 21"
-        />
+      <li className="Calendar__small">
+        <img src={day21} alt="advent calendar day 21" />
       </li>
-      <li>
-        <img
-          className="Calendar__small"
-          src={day22}
-          alt="advent calendar day 22"
-        />
-      </li>
-      <li>
-        <img
-          className="Calendar__high24"
-          src={day2324}
-          alt="advent calendar days 23 and 24"
-        />
+      <li className="Calendar__small">
+        <img src={day22} alt="advent calendar day 22" />
       </li>
     </ul>
   );
