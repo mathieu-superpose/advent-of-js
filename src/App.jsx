@@ -17,6 +17,11 @@ import TipCalculator from "./pages/TipCalculator";
 import Meteo from "./pages/Meteo";
 import Caroussel from "./pages/Caroussel";
 import PasswordVerifier from "./pages/PasswordVerifier";
+import CollapsingSections from "./pages/CollapsingSections";
+import RockPaperScissors from "./pages/RockPaperScissors";
+import CalendarPage from "./pages/CalendarPage";
+import YoutubeGallerie from "./pages/YoutubeGallerie";
+import TableOfContent from "./pages/TableOfContent";
 
 import "./App.scss";
 
@@ -41,6 +46,11 @@ function App() {
         <Route path="/meteo" element={<Meteo />} />
         <Route path="/caroussel" element={<Caroussel />} />
         <Route path="/password-verifier" element={<PasswordVerifier />} />
+        <Route path="/collapsing-sections" element={<CollapsingSections />} />
+        <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/youtube-gallerie" element={<YoutubeGallerie />} />
+        <Route path="/table-of-content" element={<TableOfContent />} />
       </Routes>
     </div>
   );
