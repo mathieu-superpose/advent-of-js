@@ -125,7 +125,7 @@ const Calendar = () => {
       </li>
 
       <li className="Calendar__small">
-        <Link to="/">
+        <Link to="/rating">
           <img src={day16} alt="advent calendar day 16" />
         </Link>
       </li>

@@ -22,6 +22,7 @@ import RockPaperScissors from "./pages/RockPaperScissors";
 import CalendarPage from "./pages/CalendarPage";
 import YoutubeGallerie from "./pages/YoutubeGallerie";
 import TableOfContent from "./pages/TableOfContent";
+import StarRating from "./pages/StarRating";
 
 
 import "./App.scss";
@@ -64,7 +65,7 @@ function App() {
         {/* 15: youtube gallerie */}
         <Route path="/youtube-gallerie" element={<YoutubeGallerie />} />
         {/* 16: star rating */}
-
+        <Route path="/rating" element={<StarRating />} />
         {/* 17: table of content */}
         <Route path="/table-of-content" element={<TableOfContent />} />
         {/* 18: password generator */}
