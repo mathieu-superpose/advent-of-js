@@ -41,8 +41,6 @@ const Table = ({
       -1
     );
 
-    console.log("last visible: ", lastVIsibleIndex)
-
     if (lastVIsibleIndex > -1) setLastVisible(lastVIsibleIndex);
   }, [
     seeMyStory,
@@ -56,37 +54,68 @@ const Table = ({
     seeDeveloperScheduele,
   ]);
 
+  const handleContentClick = (e) => {
+    e.preventDefault();
+
+    const targetTag = e.target.hash;
+
+    document.querySelector(`${targetTag}`).scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <aside className="Table">
       <div>
         <div className="table-of-contents">Table of Contents</div>
         <ul>
           <li className={lastVisible === 0 ? "selected" : ""}>
-            <a href="#">My Story</a>
+            <a href="#myStory" onClick={(e) => handleContentClick(e)}>
+              My Story
+            </a>
           </li>
           <li className={lastVisible === 1 ? "selected" : ""}>
-            <a href="#">Priming</a>
+            <a href="#priming" onClick={(e) => handleContentClick(e)}>
+              Priming
+            </a>
           </li>
           <li className={lastVisible === 2 ? "selected" : ""}>
-            <a href="#">Enter Framer</a>
+            <a href="#enterFramer" onClick={(e) => handleContentClick(e)}>
+              Enter Framer
+            </a>
           </li>
           <li className={lastVisible === 3 ? "selected" : ""}>
-            <a href="#">For the no-coders. Framer is for you.</a>
+            <a href="#noCoders" onClick={(e) => handleContentClick(e)}>
+              For the no-coders. Framer is for you.
+            </a>
           </li>
           <li className={lastVisible === 4 ? "selected" : ""}>
-            <a href="#">For the code-saavy. Framer is for you.</a>
+            <a href="#codeSavy" onClick={(e) => handleContentClick(e)}>
+              For the code-saavy. Framer is for you.
+            </a>
           </li>
           <li className={lastVisible === 5 ? "selected" : ""}>
-            <a href="#">My Sweet Spot: How Our Team is Using Framer</a>
+            <a href="#sweetSpot" onClick={(e) => handleContentClick(e)}>
+              My Sweet Spot: How Our Team is Using Framer
+            </a>
           </li>
           <li className={lastVisible === 6 ? "selected" : ""}>
-            <a href="#">Figma</a>
+            <a href="#figma" onClick={(e) => handleContentClick(e)}>
+              Figma
+            </a>
           </li>
           <li className={lastVisible === 7 ? "selected" : ""}>
-            <a href="#">My Framer Desktop</a>
+            <a href="#framer" onClick={(e) => handleContentClick(e)}>
+              My Framer Desktop
+            </a>
           </li>
           <li className={lastVisible === 8 ? "selected" : ""}>
-            <a href="#">Tight Developer Schedule</a>
+            <a
+              href="#developerScheduele"
+              onClick={(e) => handleContentClick(e)}
+            >
+              Tight Developer Schedule
+            </a>
           </li>
         </ul>
       </div>
@@ -143,7 +172,9 @@ const Content = ({
       </p>
       <p>Are we talking about the same product?</p>
 
-      <h3 ref={myStoryRef}>My Story</h3>
+      <h3 ref={myStoryRef} id="myStory">
+        My Story
+      </h3>
 
       <p>
         Before Framer, we were using{" "}
@@ -164,7 +195,9 @@ const Content = ({
         meant.”
       </p>
 
-      <h3 ref={primingRef}>Priming</h3>
+      <h3 ref={primingRef} id="priming">
+        Priming
+      </h3>
 
       <div className="image-text-wrapper">
         <div className="image-text-wrapper__image">
@@ -215,7 +248,9 @@ const Content = ({
         smoke and mirrors. No handwaving. No magic.
       </p>
 
-      <h3 ref={enterFramerRef}>Enter Framer</h3>
+      <h3 ref={enterFramerRef} id="enterFramer">
+        Enter Framer
+      </h3>
 
       <p>
         I've known about Framer for years but never explored it as an option.
@@ -224,7 +259,9 @@ const Content = ({
 
       <p>I've been blown away.</p>
 
-      <h3 ref={noCodersRef}>For the no-coders. Framer is for you.</h3>
+      <h3 ref={noCodersRef} id="noCoders">
+        For the no-coders. Framer is for you.
+      </h3>
 
       <p>
         You can import your designs directly from Figma or Sketch or design
@@ -271,7 +308,9 @@ const Content = ({
         <img src={smart} alt="Framer Smart Components" />
       </div>
 
-      <h3 ref={codeSavyRef}>For the code-savvy. Framer is for you.</h3>
+      <h3 ref={codeSavyRef} id="codeSavy">
+        For the code-savvy. Framer is for you.
+      </h3>
 
       <p>
         In Framer, you can code custom React components(!!) and use them
@@ -284,7 +323,9 @@ const Content = ({
 
       <p>The sky truly is the limit.</p>
 
-      <h3 ref={sweetSpotRef}>My Sweet Spot: How Our Team is Using Framer</h3>
+      <h3 ref={sweetSpotRef} id="sweetSpot">
+        My Sweet Spot: How Our Team is Using Framer
+      </h3>
 
       <p>
         I recognize that my skill set is different. I design and write code. Not
@@ -293,7 +334,9 @@ const Content = ({
         in an application.
       </p>
 
-      <h3 ref={figmaRef}>Figma</h3>
+      <h3 ref={figmaRef} id="figma">
+        Figma
+      </h3>
 
       <p>
         I’ve done all the initial design work within Figma. I have more
@@ -315,7 +358,9 @@ const Content = ({
         </div>
       </div>
 
-      <h3 ref={framerRef}>Framer Desktop</h3>
+      <h3 ref={framerRef} id="framer">
+        Framer Desktop
+      </h3>
 
       <p>
         You can do everything within the browser, through Framer Web. In fact,
@@ -390,7 +435,9 @@ const Content = ({
         <p>Generating a QR Code for Framer Preview App</p>
       </div>
 
-      <h3 ref={developerSchedueleRef}>Tight Developer Schedule</h3>
+      <h3 ref={developerSchedueleRef} id="developerScheduele">
+        Tight Developer Schedule
+      </h3>
 
       <p>
         As with most projects, this one has a tight developer schedule. One of
