@@ -1,3 +1,6 @@
+import { useEffect, useRef, useState } from "react";
+import { useElementOnScreen } from "../../hooks/useElementOnScreen";
+
 import details from "./src/img/design-details.jpeg";
 import figma from "./src/img/figma-sidebar.png";
 import community from "./src/img/framer-community-plugins.gif";
@@ -7,37 +10,82 @@ import smart from "./src/img/framer-smart-components.gif";
 
 import "./TableOfContent.scss";
 
-const Table = () => {
+const Table = ({
+  seeMyStory,
+  seePriming,
+  seeEnterFramer,
+  seeNoCoders,
+  seeCodeSavy,
+  seeSweetSpot,
+  seeFigma,
+  seeFramer,
+  seeDeveloperScheduele,
+}) => {
+  const [lastVisible, setLastVisible] = useState(0);
+
+  useEffect(() => {
+    const titleStates = [
+      seeMyStory,
+      seePriming,
+      seeEnterFramer,
+      seeNoCoders,
+      seeCodeSavy,
+      seeSweetSpot,
+      seeFigma,
+      seeFramer,
+      seeDeveloperScheduele,
+    ];
+
+    const lastVIsibleIndex = titleStates.reduce(
+      (lvIndex, currTitleState, index) => (currTitleState ? index : lvIndex),
+      -1
+    );
+
+    console.log("last visible: ", lastVIsibleIndex)
+
+    if (lastVIsibleIndex > -1) setLastVisible(lastVIsibleIndex);
+  }, [
+    seeMyStory,
+    seePriming,
+    seeEnterFramer,
+    seeNoCoders,
+    seeCodeSavy,
+    seeSweetSpot,
+    seeFigma,
+    seeFramer,
+    seeDeveloperScheduele,
+  ]);
+
   return (
     <aside className="Table">
       <div>
         <div className="table-of-contents">Table of Contents</div>
         <ul>
-          <li className="selected">
+          <li className={lastVisible === 0 ? "selected" : ""}>
             <a href="#">My Story</a>
           </li>
-          <li>
+          <li className={lastVisible === 1 ? "selected" : ""}>
             <a href="#">Priming</a>
           </li>
-          <li>
+          <li className={lastVisible === 2 ? "selected" : ""}>
             <a href="#">Enter Framer</a>
           </li>
-          <li>
+          <li className={lastVisible === 3 ? "selected" : ""}>
             <a href="#">For the no-coders. Framer is for you.</a>
           </li>
-          <li>
+          <li className={lastVisible === 4 ? "selected" : ""}>
             <a href="#">For the code-saavy. Framer is for you.</a>
           </li>
-          <li>
+          <li className={lastVisible === 5 ? "selected" : ""}>
             <a href="#">My Sweet Spot: How Our Team is Using Framer</a>
           </li>
-          <li>
+          <li className={lastVisible === 6 ? "selected" : ""}>
             <a href="#">Figma</a>
           </li>
-          <li>
+          <li className={lastVisible === 7 ? "selected" : ""}>
             <a href="#">My Framer Desktop</a>
           </li>
-          <li>
+          <li className={lastVisible === 8 ? "selected" : ""}>
             <a href="#">Tight Developer Schedule</a>
           </li>
         </ul>
@@ -46,7 +94,17 @@ const Table = () => {
   );
 };
 
-const Content = () => {
+const Content = ({
+  myStoryRef,
+  primingRef,
+  enterFramerRef,
+  noCodersRef,
+  codeSavyRef,
+  sweetSpotRef,
+  figmaRef,
+  framerRef,
+  developerSchedueleRef,
+}) => {
   return (
     <main>
       <h1>Framer is still alive and well… and it’s a game-changer</h1>
@@ -85,7 +143,7 @@ const Content = () => {
       </p>
       <p>Are we talking about the same product?</p>
 
-      <h3>My Story</h3>
+      <h3 ref={myStoryRef}>My Story</h3>
 
       <p>
         Before Framer, we were using{" "}
@@ -106,14 +164,14 @@ const Content = () => {
         meant.”
       </p>
 
-      <h3>Priming</h3>
+      <h3 ref={primingRef}>Priming</h3>
 
-      <div class="image-text-wrapper">
-        <div class="image-text-wrapper__image">
+      <div className="image-text-wrapper">
+        <div className="image-text-wrapper__image">
           <img src={details} alt="Design Details" />
         </div>
 
-        <div class="image-text-wrapper__content">
+        <div className="image-text-wrapper__content">
           <p>
             In November (2020), I started working with a new client, designing a
             native application. About the same time, I was listening to the{" "}
@@ -157,7 +215,7 @@ const Content = () => {
         smoke and mirrors. No handwaving. No magic.
       </p>
 
-      <h3>Enter Framer</h3>
+      <h3 ref={enterFramerRef}>Enter Framer</h3>
 
       <p>
         I've known about Framer for years but never explored it as an option.
@@ -166,7 +224,7 @@ const Content = () => {
 
       <p>I've been blown away.</p>
 
-      <h3>For the no-coders. Framer is for you.</h3>
+      <h3 ref={noCodersRef}>For the no-coders. Framer is for you.</h3>
 
       <p>
         You can import your designs directly from Figma or Sketch or design
@@ -177,18 +235,18 @@ const Content = () => {
         build a prototype without writing a line of code.
       </p>
 
-      <div class="image">
+      <div className="image">
         <img src={insert} alt="Framer Insert Menu" />
-        <caption>Insert Menu within Framer</caption>
+        <p>Insert Menu within Framer</p>
       </div>
 
       <p>
         There’s an entire library of third-party components, at your disposal.
       </p>
 
-      <div class="image">
+      <div className="image">
         <img src={community} alt="Framer Community Plugins" />
-        <caption>Framer Community Plugins</caption>
+        <p>Framer Community Plugins</p>
       </div>
 
       <p>
@@ -209,11 +267,11 @@ const Content = () => {
         , the sky’s the limit.
       </p>
 
-      <div class="image">
+      <div className="image">
         <img src={smart} alt="Framer Smart Components" />
       </div>
 
-      <h3>For the code-savvy. Framer is for you.</h3>
+      <h3 ref={codeSavyRef}>For the code-savvy. Framer is for you.</h3>
 
       <p>
         In Framer, you can code custom React components(!!) and use them
@@ -226,7 +284,7 @@ const Content = () => {
 
       <p>The sky truly is the limit.</p>
 
-      <h3>My Sweet Spot: How Our Team is Using Framer</h3>
+      <h3 ref={sweetSpotRef}>My Sweet Spot: How Our Team is Using Framer</h3>
 
       <p>
         I recognize that my skill set is different. I design and write code. Not
@@ -235,7 +293,7 @@ const Content = () => {
         in an application.
       </p>
 
-      <h3>Figma</h3>
+      <h3 ref={figmaRef}>Figma</h3>
 
       <p>
         I’ve done all the initial design work within Figma. I have more
@@ -243,12 +301,12 @@ const Content = () => {
         experiment in design without muddying my prototype in Framer.
       </p>
 
-      <div class="image-text-wrapper">
-        <div class="image-text-wrapper__image">
+      <div className="image-text-wrapper">
+        <div className="image-text-wrapper__image">
           <img src={figma} alt="Figma Sidebar" />
         </div>
 
-        <div class="image-text-wrapper__content">
+        <div className="image-text-wrapper__content">
           <p>
             Once the design is cleaned up, I have a page in Figma that I use
             specifically for a hand-off. This keeps unwanted elements out of
@@ -257,7 +315,7 @@ const Content = () => {
         </div>
       </div>
 
-      <h3>Framer Desktop</h3>
+      <h3 ref={framerRef}>Framer Desktop</h3>
 
       <p>
         You can do everything within the browser, through Framer Web. In fact,
@@ -327,12 +385,12 @@ const Content = () => {
         app.
       </p>
 
-      <div class="image">
+      <div className="image">
         <img src={qr} alt="Framer QR Code" />
-        <caption>Generating a QR Code for Framer Preview App</caption>
+        <p>Generating a QR Code for Framer Preview App</p>
       </div>
 
-      <h3>Tight Developer Schedule</h3>
+      <h3 ref={developerSchedueleRef}>Tight Developer Schedule</h3>
 
       <p>
         As with most projects, this one has a tight developer schedule. One of
@@ -353,11 +411,41 @@ const Content = () => {
 };
 
 const TableOfContent = () => {
+  const [myStoryRef, seeMyStory] = useElementOnScreen();
+  const [primingRef, seePriming] = useElementOnScreen();
+  const [enterFramerRef, seeEnterFramer] = useElementOnScreen();
+  const [noCodersRef, seeNoCoders] = useElementOnScreen();
+  const [codeSavyRef, seeCodeSavy] = useElementOnScreen();
+  const [sweetSpotRef, seeSweetSpot] = useElementOnScreen();
+  const [figmaRef, seeFigma] = useElementOnScreen();
+  const [framerRef, seeFramer] = useElementOnScreen();
+  const [developerSchedueleRef, seeDeveloperScheduele] = useElementOnScreen();
+
   return (
     <div className="TableOfContent">
       <div className="content">
-        <Table />
-        <Content />
+        <Table
+          seeMyStory={seeMyStory}
+          seePriming={seePriming}
+          seeEnterFramer={seeEnterFramer}
+          seeNoCoders={seeNoCoders}
+          seeCodeSavy={seeCodeSavy}
+          seeSweetSpot={seeSweetSpot}
+          seeFigma={seeFigma}
+          seeFramer={seeFramer}
+          seeDeveloperScheduele={seeDeveloperScheduele}
+        />
+        <Content
+          myStoryRef={myStoryRef}
+          primingRef={primingRef}
+          enterFramerRef={enterFramerRef}
+          noCodersRef={noCodersRef}
+          codeSavyRef={codeSavyRef}
+          sweetSpotRef={sweetSpotRef}
+          figmaRef={figmaRef}
+          framerRef={framerRef}
+          developerSchedueleRef={developerSchedueleRef}
+        />
       </div>
     </div>
   );
