@@ -16,6 +16,7 @@ import Podcasts from "./pages/Podcasts";
 import TipCalculator from "./pages/TipCalculator";
 import Meteo from "./pages/Meteo";
 import Caroussel from "./pages/Caroussel";
+import RockPaperScissors from "./pages/RockPaperScissors";
 import CalendarPage from "./pages/CalendarPage";
 import YoutubeGallerie from "./pages/YoutubeGallerie";
 import TableOfContent from "./pages/TableOfContent";
@@ -42,6 +43,7 @@ function App() {
         <Route path="/tipcalcultor" element={<TipCalculator />} />
         <Route path="/meteo" element={<Meteo />} />
         <Route path="/caroussel" element={<Caroussel />} />
+        <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/youtube-gallerie" element={<YoutubeGallerie />} />
         <Route path="/table-of-content" element={<TableOfContent />} />

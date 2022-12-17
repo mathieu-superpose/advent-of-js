@@ -57,6 +57,7 @@ const Calendar = () => {
           <img src={day06} alt="advent calendar day 6" />
         </Link>
       </li>
+
       <li className="Calendar__small">
         <Link to="/tipcalcultor">
           <img src={day07} alt="advent calendar day 7" />
@@ -75,9 +76,15 @@ const Calendar = () => {
       <li className="Calendar__large">
         <img src={day1011} alt="advent calendar days 10 and 11" />
       </li>
-      <li className="Calendar__small">
-        <img src={day12} alt="advent calendar day 12" />
-      </li>
+      <Link to="/rock-paper-scissors">
+        <li>
+          <img
+            className="Calendar__small"
+            src={day12}
+            alt="advent calendar day 12"
+          />
+        </li>
+      </Link>
       <li className="Calendar__high">
         <Link to="/table-of-content">
           <img src={day1317} alt="advent calendar day 13" />
