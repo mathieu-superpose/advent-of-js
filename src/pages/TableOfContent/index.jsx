@@ -21,7 +21,7 @@ const Table = ({
   seeFramer,
   seeDeveloperScheduele,
 }) => {
-  const [lastVisible, setLastVisible] = useState(0);
+  const [firstVisible, setFirstVisible] = useState(0);
 
   useEffect(() => {
     const titleStates = [
@@ -36,12 +36,12 @@ const Table = ({
       seeDeveloperScheduele,
     ];
 
-    const lastVIsibleIndex = titleStates.reduce(
-      (lvIndex, currTitleState, index) => (currTitleState ? index : lvIndex),
+    const firstVIsibleIndex = titleStates.reduce(
+      (lvIndex, currTitleState, index) => (lvIndex > -1 ? lvIndex : currTitleState ? index : lvIndex),
       -1
     );
 
-    if (lastVIsibleIndex > -1) setLastVisible(lastVIsibleIndex);
+    if (firstVIsibleIndex > -1) setFirstVisible(firstVIsibleIndex);
   }, [
     seeMyStory,
     seePriming,
@@ -69,47 +69,47 @@ const Table = ({
       <div>
         <div className="table-of-contents">Table of Contents</div>
         <ul>
-          <li className={lastVisible === 0 ? "selected" : ""}>
+          <li className={firstVisible === 0 ? "selected" : ""}>
             <a href="#myStory" onClick={(e) => handleContentClick(e)}>
               My Story
             </a>
           </li>
-          <li className={lastVisible === 1 ? "selected" : ""}>
+          <li className={firstVisible === 1 ? "selected" : ""}>
             <a href="#priming" onClick={(e) => handleContentClick(e)}>
               Priming
             </a>
           </li>
-          <li className={lastVisible === 2 ? "selected" : ""}>
+          <li className={firstVisible === 2 ? "selected" : ""}>
             <a href="#enterFramer" onClick={(e) => handleContentClick(e)}>
               Enter Framer
             </a>
           </li>
-          <li className={lastVisible === 3 ? "selected" : ""}>
+          <li className={firstVisible === 3 ? "selected" : ""}>
             <a href="#noCoders" onClick={(e) => handleContentClick(e)}>
               For the no-coders. Framer is for you.
             </a>
           </li>
-          <li className={lastVisible === 4 ? "selected" : ""}>
+          <li className={firstVisible === 4 ? "selected" : ""}>
             <a href="#codeSavy" onClick={(e) => handleContentClick(e)}>
               For the code-saavy. Framer is for you.
             </a>
           </li>
-          <li className={lastVisible === 5 ? "selected" : ""}>
+          <li className={firstVisible === 5 ? "selected" : ""}>
             <a href="#sweetSpot" onClick={(e) => handleContentClick(e)}>
               My Sweet Spot: How Our Team is Using Framer
             </a>
           </li>
-          <li className={lastVisible === 6 ? "selected" : ""}>
+          <li className={firstVisible === 6 ? "selected" : ""}>
             <a href="#figma" onClick={(e) => handleContentClick(e)}>
               Figma
             </a>
           </li>
-          <li className={lastVisible === 7 ? "selected" : ""}>
+          <li className={firstVisible === 7 ? "selected" : ""}>
             <a href="#framer" onClick={(e) => handleContentClick(e)}>
               My Framer Desktop
             </a>
           </li>
-          <li className={lastVisible === 8 ? "selected" : ""}>
+          <li className={firstVisible === 8 ? "selected" : ""}>
             <a
               href="#developerScheduele"
               onClick={(e) => handleContentClick(e)}
