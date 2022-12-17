@@ -17,6 +17,7 @@ import TipCalculator from "./pages/TipCalculator";
 import Meteo from "./pages/Meteo";
 import Caroussel from "./pages/Caroussel";
 import CalendarPage from "./pages/CalendarPage";
+import TableOfContent from "./pages/TableOfContent";
 
 import "./App.scss";
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/meteo" element={<Meteo />} />
         <Route path="/caroussel" element={<Caroussel />} />
         <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/table-of-content" element={<TableOfContent />} />
       </Routes>
     </div>
   );
