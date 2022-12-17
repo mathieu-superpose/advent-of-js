@@ -12,7 +12,7 @@ const RockPaperScissors = () => {
   const [winner, setWinner] = useState("");
 
   useEffect(() => {
-    getComputerPLay();
+    if (!computerPlay) getComputerPLay();
     if (selected) getWinner();
   }, [selected]);
 
@@ -89,7 +89,7 @@ const RockPaperScissors = () => {
   );
 };
 
-const Pick = (choice) => {
+const Pick = ({ choice }) => {
   if (choice === "rock") return <img src={rock} alt="Rock" />;
   if (choice === "paper") return <img src={paper} alt="Paper" />;
   return <img src={scissors} alt="Scissors" />;
