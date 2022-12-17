@@ -74,17 +74,19 @@ const Calendar = () => {
         </Link>
       </li>
       <li className="Calendar__large">
-        <img src={day1011} alt="advent calendar days 10 and 11" />
+        <Link to="collapsing-sections">
+          <img src={day1011} alt="advent calendar days 10 and 11" />
+        </Link>
       </li>
-      <Link to="/rock-paper-scissors">
-        <li>
+      <li>
+        <Link to="/rock-paper-scissors">
           <img
             className="Calendar__small"
             src={day12}
             alt="advent calendar day 12"
           />
-        </li>
-      </Link>
+        </Link>
+      </li>
       <li className="Calendar__high">
         <Link to="/table-of-content">
           <img src={day1317} alt="advent calendar day 13" />

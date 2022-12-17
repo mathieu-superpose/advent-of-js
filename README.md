@@ -137,6 +137,18 @@ An Image Carousel
 
 Infinite scrolling
 
+
+## 11: Collapsing sections
+
+### Description
+
+Collapsing sections
+
+### User stories
+
+- I can click on a collapsed question to expand it and view the answer.
+- I can click on a collapsed answer to collapse it and hide the answer.
+
 ## 14: Calendar
 
 ### Description

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
+
+.CollapsingSections {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: min(90vw, 900px);
+    & li {
+      margin-bottom: 75px;
+    }
+  }
+}
+
+.CollapsingContent {
+  &__answer {
+    display: none;
+  }
+  &__answer--open {
+    display: block;
+    background-color: #ffdd00;
+    // width: calc(100% - 60px);
+    margin-left: 55px;
+    padding: 30px 75px;
+    box-sizing: border-box;
+  }
+}
+
+.Question,
+.Question--expanded {
+  text-decoration: none;
+  &__ctn {
+    background: white;
+    border: 5px solid black;
+    padding: 25px 38px;
+    width: calc(100% - 55px);
+    display: block;
+    position: relative;
+    padding-left: 130px;
+    box-sizing: border-box;
+    color: black;
+    &:before {
+      content: "";
+      display: block;
+      background: black;
+      width: 102px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+    &:after {
+      content: "";
+      background: #f0f0f0 url("./src/img/chevron.svg") calc(100% - 12px) 20px
+        no-repeat;
+      width: calc(100%);
+      position: absolute;
+      right: -55px;
+      top: 15px;
+      height: calc(100% + 15px);
+      z-index: -1;
+    }
+    &__question-mark {
+      position: absolute;
+      left: 10px;
+      z-index: 5;
+      top: -45px;
+    }
+    &__content {
+      position: relative;
+      z-index: 3;
+    }
+  }
+}
+
+.Question:hover .Question__ctn:after {
+  background-color: #ffdd00;
+}
+
+.Question--expanded {
+  &__ctn:after {
+    background-color: #ffdd00;
+  }
+}
