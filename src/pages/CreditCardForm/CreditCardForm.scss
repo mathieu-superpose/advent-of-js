@@ -90,6 +90,10 @@
   }
 }
 
+.CardImage.flip .credit-card__inner {
+  transform: rotateY(180deg);
+}
+
 .CardImage {
   position: relative;
   top: -200px;
@@ -117,7 +121,7 @@
       backface-visibility: hidden;
     }
     & .credit-card--back {
-      transform: rotateY(180deg) translateX(-334px);
+      transform: rotateY(180deg) translateX(-234px);
     }
 
     & .visa.credit-card--front {
@@ -216,7 +220,7 @@
       font-size: 32px;
       position: absolute;
       left: 105px;
-      top: 142px;
+      top: 144px;
     }
 
     & .cvv {
