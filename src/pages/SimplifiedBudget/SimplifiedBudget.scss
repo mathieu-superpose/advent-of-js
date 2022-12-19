@@ -79,11 +79,14 @@
 
 .ExpensesPanel {
   padding: 220px 125px 180px;
-
   & .expense-table {
-    display: grid;
-    grid-template-columns: 1fr 150px auto;
+    list-style: none;
   }
+}
+
+.ExpenseItem {
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
 
   & .expense-table div {
     border-bottom: 2px solid #313131;
