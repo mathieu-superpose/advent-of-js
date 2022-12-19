@@ -31,6 +31,7 @@ const Calendar = () => {
           <img src={day01} alt="advent calendar day 1" />
         </Link>
       </li>
+
       <li className="Calendar__small">
         <Link to="/ecommerce">
           <img src={day02} alt="advent calendar day 2" />
@@ -79,10 +80,12 @@ const Calendar = () => {
           <Link to="password-verifier">
             <div className="Calendar__large__links__contentLeft" />
           </Link>
+
           <Link to="collapsing-sections">
             <div className="Calendar__large__links__contentRight" />
           </Link>
         </div>
+
         <img src={day1011} alt="advent calendar days 10 and 11" />
       </li>
 
@@ -95,41 +98,72 @@ const Calendar = () => {
           />
         </Link>
       </li>
+
       <li className="Calendar__high">
-        <Link to="/table-of-content">
-          <img src={day1317} alt="advent calendar day 13" />
-        </Link>
+        <div className="Calendar__high__links">
+          <Link to="/custom-modal">
+            <div className="Calendar__high__links__contentTop" />
+          </Link>
+
+          <Link to="/table-of-content">
+            <div className="Calendar__high__links__contentBottom" />
+          </Link>
+        </div>
+        <img src={day1317} alt="advent calendar day 13" />
       </li>
+
       <li className="Calendar__small">
         <Link to="/calendar">
           <img src={day14} alt="advent calendar day 14" />
         </Link>
       </li>
+
       <li className="Calendar__small">
-        <img src={day15} alt="advent calendar day 15" />
+        <Link to="/">
+          <img src={day15} alt="advent calendar day 15" />
+        </Link>
       </li>
+
       <li className="Calendar__small">
-        <img src={day16} alt="advent calendar day 16" />
+        <Link to="/rating">
+          <img src={day16} alt="advent calendar day 16" />
+        </Link>
       </li>
+
       <li className="Calendar__small">
-        <img src={day18} alt="advent calendar day 18" />
+        <Link to="/password">
+          <img src={day18} alt="advent calendar day 18" />
+        </Link>
       </li>
+
       <li className="Calendar__small">
-        <img src={day19} alt="advent calendar day 19" />
+        <Link to="/signup">
+          <img src={day19} alt="advent calendar day 19" />
+        </Link>
       </li>
+
       <li className="Calendar__high">
-        <img src={day2324} alt="advent calendar days 23 and 24" />
+        <Link to="/">
+          <img src={day2324} alt="advent calendar days 23 and 24" />
+        </Link>
       </li>
+
       <li className="Calendar__small">
         <Link to="/tabbed-content">
           <img src={day20} alt="advent calendar day 20" />
         </Link>
       </li>
+
       <li className="Calendar__small">
-        <img src={day21} alt="advent calendar day 21" />
+        <Link to="/simplified-budget">
+          <img src={day21} alt="advent calendar day 21" />
+        </Link>
       </li>
+
       <li className="Calendar__small">
-        <img src={day22} alt="advent calendar day 22" />
+        <Link to="/">
+          <img src={day22} alt="advent calendar day 22" />
+        </Link>
       </li>
     </ul>
   );
