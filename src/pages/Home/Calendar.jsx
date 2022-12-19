@@ -100,7 +100,7 @@ const Calendar = () => {
       </li>
 
       <li className="Calendar__high">
-        <div lassName="Calendar__high__links">
+        <div className="Calendar__high__links">
           <Link to="/custom-modal">
             <div className="Calendar__high__links__contentTop" />
           </Link>
@@ -155,7 +155,7 @@ const Calendar = () => {
       </li>
 
       <li className="Calendar__small">
-        <Link to="/">
+        <Link to="/simplified-budget">
           <img src={day21} alt="advent calendar day 21" />
         </Link>
       </li>

@@ -23,6 +23,7 @@ import CalendarPage from "./pages/CalendarPage";
 import YoutubeGallerie from "./pages/YoutubeGallerie";
 import TableOfContent from "./pages/TableOfContent";
 import StarRating from "./pages/StarRating";
+import SimplifiedBudget from "./pages/SimplifiedBudget";
 
 
 import "./App.scss";
@@ -75,7 +76,7 @@ function App() {
         {/* 20: tabbed content */}
         <Route path="/tabbed-content" element={<TabbedContent />} />
         {/* 21: simplified budget */}
-
+        <Route path="/simplified-budget" element={<SimplifiedBudget />} />
         {/* 22: credit card form */}
 
         {/* 23: toaster */}
