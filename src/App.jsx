@@ -24,6 +24,7 @@ import YoutubeGallerie from "./pages/YoutubeGallerie";
 import TableOfContent from "./pages/TableOfContent";
 import StarRating from "./pages/StarRating";
 import SimplifiedBudget from "./pages/SimplifiedBudget";
+import CreditCardForm from "./pages/CreditCardForm";
 
 
 import "./App.scss";
@@ -78,7 +79,7 @@ function App() {
         {/* 21: simplified budget */}
         <Route path="/simplified-budget" element={<SimplifiedBudget />} />
         {/* 22: credit card form */}
-
+        <Route path="/credit-card-form" element={<CreditCardForm />} />
         {/* 23: toaster */}
         <Route path="/toaster" element={<Toaster />} />
 
