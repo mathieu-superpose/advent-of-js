@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import plus from "./src/img/plus.svg";
 import trash from "./src/img/trash.svg";
@@ -41,6 +41,7 @@ const AddPanel = () => {
           <label htmlFor="expense-amount">Amount</label>
         </div>
         <button
+          onClick={handleAddClick}
           name="add-expense-button"
           id="add-expense-button"
           className="add-expense-button"
@@ -54,7 +55,7 @@ const AddPanel = () => {
 
 const ExpensesPanel = () => {
   return (
-    <div class="ExpensesPanel">
+    <div className="ExpensesPanel">
       <h2>Expenses</h2>
       <div className="expense-table">
         <div>Starbucks</div>
@@ -85,12 +86,30 @@ const ExpensesPanel = () => {
   );
 };
 
-const SummaryPanel = () => {
+const SummaryPanel = ({ budget }) => {
+  const formatAmount = (amount) => {
+    const stringAmount = amount
+      ? Math.floor(amount * 100)
+          .toString()
+          .replace(/(\d{2})^/, ".$1")
+      : "0.00";
+
+    const formatedAmount = stringAmount
+      .split("")
+      .reverse()
+      .join("")
+      .replace(/(\d{3})(?=\d)/g, "$1,")
+      .split("")
+      .reverse()
+      .join("");
+    return "$" + formatedAmount;
+  };
+
   return (
     <div className="SummaryPanel">
       <div className="summary-item">
         <div className="summary-label">Income</div>
-        <div className="summary-amount">$42,000.00</div>
+        <div className="summary-amount">{formatAmount(budget)}</div>
       </div>
 
       <div className="summary-item">
@@ -107,12 +126,14 @@ const SummaryPanel = () => {
 };
 
 const SimplifiedBudget = () => {
+  const [budget, setBudget] = useState(0);
+
   return (
     <div className="SimplifiedBudget">
       <div className="wrapper">
         <AddPanel />
         <ExpensesPanel />
-        <SummaryPanel />
+        <SummaryPanel budget={budget} />
       </div>
     </div>
   );
