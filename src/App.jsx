@@ -25,7 +25,7 @@ import TableOfContent from "./pages/TableOfContent";
 import StarRating from "./pages/StarRating";
 import SimplifiedBudget from "./pages/SimplifiedBudget";
 import CreditCardForm from "./pages/CreditCardForm";
-
+import Pagination from "./pages/Pagination";
 
 import "./App.scss";
 
@@ -82,9 +82,8 @@ function App() {
         <Route path="/credit-card-form" element={<CreditCardForm />} />
         {/* 23: toaster */}
         <Route path="/toaster" element={<Toaster />} />
-
         {/* 24: table with pagniation */}
-
+        <Route path="/pagination" element={<Pagination />} />
       </Routes>
     </div>
   );

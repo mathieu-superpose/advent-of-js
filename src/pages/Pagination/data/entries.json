@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "id": "1",
+      "name": "Cameron Williamson",
+      "email": "cameron.williams@example.com",
+      "jobTitle": "software developer"
+    },
+    {
+      "id": "2",
+      "name": "John Patabus",
+      "email": "john.patabus@example.com",
+      "jobTitle": "product manager"
+    },
+    {
+      "id": "3",
+      "name": "Amy Atkins",
+      "email": "amy.atkins@example.com",
+      "jobTitle": "software architect"
+    }
+  ]
+}
