@@ -31,33 +31,30 @@ const Entry = ({ entryData, updateEntry }) => {
 
   if (isUpdating)
     return (
-      <tr>
+      <tr class="edit">
         <td>{id}</td>
         <td className="name">
           <input
             type="text"
-            disabled="disabled"
             name="person-name-1"
             value={capitalizeName(name)}
-            onChange={(e) => setName(e.current.value)}
+            onChange={(e) => setName(e.target.value)}
           />
         </td>
         <td>
           <input
             type="text"
-            disabled="disabled"
             name="person-email-1"
             value={email}
-            onChange={(e) => setEmail(e.current.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </td>
         <td>
           <input
             type="text"
-            disabled="disabled"
             name="person-title-1"
             value={jobTitle}
-            onChange={(e) => setJobTitle(e.current.value)}
+            onChange={(e) => setJobTitle(e.target.value)}
           />
         </td>
         <td>
@@ -146,10 +143,9 @@ const Pagination = () => {
   };
 
   const updateEntry = (entryId, modifiedEntry) => {
-    const filteredEntries = entries.filter(
-      (entry) => entry.id !== modifiedEntry.id
+    setEntries(
+      entries.map((entry) => (entry.id !== entryId ? entry : modifiedEntry))
     );
-    setEntries([...filteredEntries, modifiedEntry]);
   };
 
   const sortEntriesBy = (filter, isAscending) => {
