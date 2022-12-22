@@ -143,9 +143,16 @@ const Calendar = () => {
       </li>
 
       <li className="Calendar__high">
-        <Link to="/">
-          <img src={day2324} alt="advent calendar days 23 and 24" />
-        </Link>
+        <div className="Calendar__high__links">
+          <Link to="/toaster">
+            <div className="Calendar__high__links__contentTop" />
+          </Link>
+
+          <Link to="/pagination">
+            <div className="Calendar__high__links__contentBottom" />
+          </Link>
+        </div>
+        <img src={day2324} alt="advent calendar days 23 and 24" />
       </li>
 
       <li className="Calendar__small">
