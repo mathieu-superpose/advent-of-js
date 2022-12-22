@@ -119,17 +119,30 @@ const Entry = ({ entryData, updateEntry }) => {
 
 const Pagination = () => {
   const [entries, setEntries] = useState(data.results);
+  const [displayedEntries, setDisplayedEntries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentDisplayedPage, setCurrentDisplayedPage] = useState(1);
+  const [currentDisplayedPage, setCurrentDisplayedPage] = useState("1");
   const [sortingMethod, setSortingMethod] = useState("idAscending");
 
+  const lastPageIndex = Math.ceil(entries.length / 10);
+
   const handlecurrentDisplayedPageChange = (e) => {
-    setCurrentDisplayedPage(e.current.value);
+    setCurrentDisplayedPage(e.target.value);
   };
 
-  const handlecurrentDisplayedPageBlur = () => {
-    console.log("change to page ", currentDisplayedPage);
-    console.log(currentPage);
+  const handlecurrentDisplayedPageBlur = (e) => {
+    const currentValue = Number(e.target.value) || currentPage;
+
+    if (currentValue <= 0) {
+      setCurrentDisplayedPage(1);
+      setCurrentPage(1);
+    } else if (currentValue > lastPageIndex) {
+      setCurrentDisplayedPage(lastPageIndex);
+      setCurrentPage(lastPageIndex);
+    } else {
+      setCurrentDisplayedPage(currentValue);
+      setCurrentPage(currentValue);
+    }
   };
 
   const updateEntry = (entryId, modifiedEntry) => {
@@ -149,12 +162,35 @@ const Pagination = () => {
         ? 1
         : -1
     );
+
     const newMethod = filter + (isAscending ? "Ascending" : "Descending");
     setSortingMethod(newMethod);
     setEntries(sortedEntries);
     setCurrentPage(1);
     setCurrentDisplayedPage(1);
   };
+
+  const handlePreviousClick = () => {
+    if (currentPage > 1) {
+      const previousPage = currentPage - 1;
+      setCurrentPage(previousPage);
+      setCurrentDisplayedPage(`${previousPage}`);
+    }
+  };
+
+  const handleNextClick = () => {
+    if (currentPage < lastPageIndex) {
+      const nextPage = currentPage + 1;
+      setCurrentPage(nextPage);
+      setCurrentDisplayedPage(`${nextPage}`);
+    }
+  };
+
+  useEffect(() => {
+    setDisplayedEntries(
+      entries.slice((currentPage - 1) * 10, currentPage * 10)
+    );
+  }, [entries, currentPage]);
 
   return (
     <div className="Pagination">
@@ -291,7 +327,7 @@ const Pagination = () => {
           </thead>
 
           <tbody>
-            {entries.map((entryData) => (
+            {displayedEntries.map((entryData) => (
               <Entry
                 key={entryData.id}
                 entryData={entryData}
@@ -305,7 +341,11 @@ const Pagination = () => {
               <td colSpan="2">30 Results</td>
               <td colSpan="3">
                 <div className="pagination edit">
-                  <button className="previous" id="previous">
+                  <button
+                    className="previous"
+                    id="previous"
+                    onClick={handlePreviousClick}
+                  >
                     <img src={chevronLeft} alt="Previous" />
                   </button>
 
@@ -314,14 +354,14 @@ const Pagination = () => {
                     name="currentPage"
                     value={currentDisplayedPage}
                     id="currentPage"
-                    onChange={handlecurrentDisplayedPageChange}
-                    onBlur={handlecurrentDisplayedPageBlur}
+                    onChange={(e) => handlecurrentDisplayedPageChange(e)}
+                    onBlur={(e) => handlecurrentDisplayedPageBlur(e)}
                   />
 
                   <span>&nbsp;of&nbsp;</span>
                   <span id="totalPages">3</span>
 
-                  <button className="next" id="next">
+                  <button className="next" id="next" onClick={handleNextClick}>
                     <img src={chevronRight} alt="Next" />
                   </button>
                 </div>
