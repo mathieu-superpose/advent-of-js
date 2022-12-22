@@ -23,11 +23,6 @@ const Entry = ({ entryData, updateEntry }) => {
   const [jobTitle, setJobTitle] = useState(entryData.jobTitle);
   const [isUpdating, setIsUpdating] = useState(false);
 
-  // useEffect(() => {
-  //   const modifiedEntry = { id, name, email, jobTitle };
-  //   updateEntry(id, modifiedEntry);
-  // }, [jobTitle, email, jobTitle]);
-
   const handleUpdateClick = () => {
     const modifiedEntry = { id, name, email, jobTitle };
     updateEntry(id, modifiedEntry);
@@ -126,6 +121,7 @@ const Pagination = () => {
   const [entries, setEntries] = useState(data.results);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentDisplayedPage, setCurrentDisplayedPage] = useState(1);
+  const [sortingMethod, setSortingMethod] = useState("idAscending");
 
   const handlecurrentDisplayedPageChange = (e) => {
     setCurrentDisplayedPage(e.current.value);
@@ -143,6 +139,23 @@ const Pagination = () => {
     setEntries([...filteredEntries, modifiedEntry]);
   };
 
+  const sortEntriesBy = (filter, isAscending) => {
+    const sortedEntries = [...entries].sort((a, b) =>
+      isAscending
+        ? a[`${filter}`] > b[`${filter}`]
+          ? 1
+          : -1
+        : b[`${filter}`] > a[`${filter}`]
+        ? 1
+        : -1
+    );
+    const newMethod = filter + (isAscending ? "Ascending" : "Descending");
+    setSortingMethod(newMethod);
+    setEntries(sortedEntries);
+    setCurrentPage(1);
+    setCurrentDisplayedPage(1);
+  };
+
   return (
     <div className="Pagination">
       <div className="wrapper">
@@ -151,7 +164,15 @@ const Pagination = () => {
             <tr>
               <th className="header__id">
                 ID
-                <button className="sort ascending">
+                <button
+                  className={`sort ${
+                    sortingMethod === "idAscending"
+                      ? "ascending"
+                      : sortingMethod === "idDescending"
+                      ? "descending"
+                      : ""
+                  }`}
+                >
                   <svg
                     width="17"
                     height="21"
@@ -162,17 +183,27 @@ const Pagination = () => {
                     <path
                       className="ascending"
                       d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z"
+                      onClick={() => sortEntriesBy("id", true)}
                     />
                     <path
                       className="descending"
                       d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                      onClick={() => sortEntriesBy("id", false)}
                     />
                   </svg>
                 </button>
               </th>
               <th>
                 Name
-                <button className="sort">
+                <button
+                  className={`sort ${
+                    sortingMethod === "nameAscending"
+                      ? "ascending"
+                      : sortingMethod === "nameDescending"
+                      ? "descending"
+                      : ""
+                  }`}
+                >
                   <svg
                     width="17"
                     height="21"
@@ -183,17 +214,27 @@ const Pagination = () => {
                     <path
                       className="ascending"
                       d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z"
+                      onClick={() => sortEntriesBy("name", true)}
                     />
                     <path
                       className="descending"
                       d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                      onClick={() => sortEntriesBy("name", false)}
                     />
                   </svg>
                 </button>
               </th>
               <th>
                 Email Address
-                <button className="sort">
+                <button
+                  className={`sort ${
+                    sortingMethod === "emailAscending"
+                      ? "ascending"
+                      : sortingMethod === "emailDescending"
+                      ? "descending"
+                      : ""
+                  }`}
+                >
                   <svg
                     width="17"
                     height="21"
@@ -204,17 +245,27 @@ const Pagination = () => {
                     <path
                       className="ascending"
                       d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z"
+                      onClick={() => sortEntriesBy("email", true)}
                     />
                     <path
                       className="descending"
                       d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                      onClick={() => sortEntriesBy("email", false)}
                     />
                   </svg>
                 </button>
               </th>
               <th>
                 Job Title
-                <button className="sort">
+                <button
+                  className={`sort ${
+                    sortingMethod === "jobTitleAscending"
+                      ? "ascending"
+                      : sortingMethod === "jobTitleDescending"
+                      ? "descending"
+                      : ""
+                  }`}
+                >
                   <svg
                     width="17"
                     height="21"
@@ -225,10 +276,12 @@ const Pagination = () => {
                     <path
                       className="ascending"
                       d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z"
+                      onClick={() => sortEntriesBy("jobTitle", true)}
                     />
                     <path
                       className="descending"
                       d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                      onClick={() => sortEntriesBy("jobTitle", false)}
                     />
                   </svg>
                 </button>
